@@ -187,13 +187,13 @@ window.CONTENT = {
      Samenstelling volgens concept-opdrachtomschrijving (10 sep 2026).  */
   team: {
     kern: [
-      { naam: "Thijs van Vegchel", rol: "Voorzitter", brengt: "Vertegenwoordigt NKR-analyse en de datastrategie. Eindverantwoordelijk voor samenhang, visie en besluitvorming." },
-      { naam: "Mirthe Groothuis", rol: "Vicevoorzitter", brengt: "Strategische verbinding met de datastrategie. Kent de data- en informatieproducten van DICA en IKNL." },
-      { naam: "Marja Nijsse", rol: "Analist", brengt: "Vertegenwoordigt de huidige praktijk van NKR-analyse: processen, klanten, maatwerk en knelpunten. Product owner DataLOKET." },
+      { naam: "Thijs van Vegchel", rol: "Werkpakketleider", brengt: "Vertegenwoordigt NKR-analyse en de datastrategie. Eindverantwoordelijk voor samenhang, visie en besluitvorming." },
+      { naam: "Mirthe Groothuis", rol: "Mede-werkpakketleider", brengt: "Strategische verbinding met de datastrategie. Kent de data- en informatieproducten van DICA en IKNL." },
+      { naam: "Gemma Timmermans", rol: "Analist", brengt: "Vertegenwoordigt de huidige praktijk van NKR-analyse: processen, klanten, maatwerk en knelpunten. Product owner DataLOKET." },
       { naam: "Marjolein Verhoeven", rol: "Informatieanalist", brengt: "Vertegenwoordigt de DICA-praktijk: productportfolio, metadata en informatieproducten." },
       { naam: "Marc Klaassen", rol: "BI-specialist", brengt: "Vanuit team BI: kennis van dashboards, BI-producten en selfservice." },
       { naam: "Emmely van Bommel", rol: "Projectmanager", brengt: "Verbindende schakel met het project Uitgeven niet-NKR-data." },
-      { naam: "Marije van Melle", rol: "Klinisch informaticus", brengt: "Verbindende schakel met Harmonisatie & Standaardisatie en de EHDS." }
+      { naam: "Sandra van der Kooij", rol: "Informatie analist", brengt: "Verbindende schakel met Harmonisatie & Standaardisatie." }
     ],
     schil: [
       { naam: "Willem Schilte", rol: "Hoofd Software Development", brengt: "Architectuur, technische koers en aansluiting op het dataplatform." },
