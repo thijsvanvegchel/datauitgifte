@@ -192,13 +192,13 @@ window.CONTENT = {
       { naam: "Gemma Timmermans", rol: "Analist", brengt: "Vertegenwoordigt de huidige praktijk van NKR-analyse: processen, klanten, maatwerk en knelpunten. Product owner DataLOKET." },
       { naam: "Marjolein Verhoeven", rol: "Informatieanalist", brengt: "Vertegenwoordigt de DICA-praktijk: productportfolio, metadata en informatieproducten." },
       { naam: "Marc Klaassen", rol: "BI-specialist", brengt: "Vanuit team BI: kennis van dashboards, BI-producten en selfservice." },
-      { naam: "Emmely van Bommel", rol: "Projectmanager", brengt: "Verbindende schakel met het project Uitgeven niet-NKR-data." },
       { naam: "Sandra van der Kooij", rol: "Informatie analist", brengt: "Verbindende schakel met Harmonisatie & Standaardisatie." }
     ],
     schil: [
       { naam: "Willem Schilte", rol: "Hoofd Software Development", brengt: "Architectuur, technische koers en aansluiting op het dataplatform." },
       { naam: "Remy Broos", rol: "Privacy officer", brengt: "Vertaalt privacyregels praktisch naar processen en projecten." },
       { naam: "Eva Mezei", rol: "Senior clinical data scientist", brengt: "Onderzoek, data science en het perspectief van de gebruiker." },
+      { naam: "Annemarie Eeltink", rol: "Analist", brengt: "Verbindende schakel met het project Uitgeven niet-NKR-data." },
       { naam: "Rian Schobers", rol: "Software developer", brengt: "Gebruiksvriendelijkheid, toegankelijkheid en gebruikerservaring." },
       { naam: "Baukje Dijkstra", rol: "Communicatie", brengt: "Adoptie, stakeholdermanagement, positionering en communicatie." },
       { naam: "1 à 2 collega's DICA", rol: "Nog in te vullen", brengt: "Extra vertegenwoordiging vanuit de kwaliteitsregistraties of de dienstverlening van DICA.", open: true }
