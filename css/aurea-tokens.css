@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Aurea design tokens
+   Bron: Aurea Brand book – Kleurenkaart (p. 35) en WCAG-richtlijnen.
+   Gebruik voor tekst ALLEEN de goedgekeurde combinaties hieronder.
+   ========================================================================== */
+
+:root {
+  /* Warm Grey – primaire kleur 1 */
+  --warm-grey: #4D4B48;
+  --warm-grey-75: #7A7875;
+  --warm-grey-50: #A6A5A3;
+  --warm-grey-25: #D2D2D1;
+
+  /* Baseline Blue – primaire kleur 2 */
+  --blue: #437398;
+  --blue-75: #6897B5;
+  --blue-50: #9BBACD;
+  --blue-25: #CDDCE6;
+
+  /* Academy Green – secundaire kleur 1 */
+  --green: #A8C7AA;
+  --green-75: #B8D6BD;
+  --green-50: #CFE4D3;
+  --green-25: #E7F1E9;
+
+  /* Pulse Peach – secundaire kleur 2 */
+  --peach: #ECBDB2;
+  --peach-75: #F1CFC5;
+  --peach-50: #F6DED9;
+  --peach-25: #FAEFED;
+
+  --white: #FFFFFF;
+  --canvas: #F7F7F7;            /* achtergrond brand book */
+
+  /* Typografie */
+  --font: "DM Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  /* Goedgekeurde WCAG-combinaties (min. 4,5:1)
+     tekst Warm Grey op wit ............ 8,69:1
+     wit op Warm Grey .................. 8,69:1
+     wit op Baseline Blue .............. 5,06:1
+     Warm Grey op Academy Green ........ 4,63:1
+     Warm Grey op Pulse Peach .......... 5,70:1
+     Academy Green op Warm Grey ........ 4,72:1
+     Pulse Peach op Warm Grey .......... 5,22:1
+     Niet gebruiken voor tekst: peach/green/blue op wit, blauw op grijs,
+     grijs op blauw, wit op green/peach, peach/green op blue, peach/green
+     op elkaar. Uitzondering: Baseline Blue voor grote koppen (>= 24px),
+     zoals het brand book zelf doet. */
+}
