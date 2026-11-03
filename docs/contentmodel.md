@@ -12,6 +12,7 @@ Hiermee kun je controleren dat er niets is verzonnen.
 | **PD** | Programma_datastrategie.pptx (uitgebreide versie) | 27 jan 2026 + latere aanvullingen | Concept ("alles nog in concept") |
 | **PD-jan** | Programma_datastrategie_v20260122.pptx | 22 jan 2026 | Concept |
 | **BR** | Briefing in het verzoek (o.a. doel, ontwikkelingen, beoogde verbeteringen) | – | Aangeleverd door opsteller |
+| **TS** | Teamsamenstelling en aanpassingen van de opsteller | okt–nov 2026 | Aangeleverd door opsteller |
 | **Stijl** | Brand book Aurea: kleurenkaart (p. 35) en WCAG-richtlijnen | – | Vastgesteld merk |
 
 > Er was geen CSS-bestand bijgevoegd. De twee brand-book-pagina's zijn gebruikt als stylesheet: de kleuren staan als tokens in `css/aurea-tokens.css`, en alleen de toegestane WCAG-combinaties worden gebruikt.
@@ -28,58 +29,81 @@ Hiermee kun je controleren dat er niets is verzonnen.
 
 ## Inhoud per scherm
 
+> Versie november 2026: alle dia's zijn ingekort voor presentatie op kleine schermen. Weggelaten details staan hieronder nog vermeld, zodat je ze mondeling kunt toelichten. Bronvermeldingen en statuslabels als 'Voorstel' worden op de dia's niet meer getoond; dit document is de plek om ze na te gaan.
+
 ### 1. Opening
 - Kernzin: "waarde ontstaat pas wanneer gebruikers ze kunnen vinden, begrijpen en toepassen" – **OO**, Aanleiding.
 
 ### 2. Waarom dit werkpakket?
-- Huidige situatie (meerdere routes, losse mailboxen/formulieren/individuen, verschillende definities en templates, oplevering per team verschillend) en de gevolgen – **PD**, dia "Thema – Optimalisatie van data-uitgifte".
-- Vijf ontwikkelingen: fusie (**PP** 1.2), verwachtingen veld (**PD** thema-dia, **PP** 1.2), databeschikbaarheid (**OO**, **BR**), EHDS/HDAB-NL (**PD**, **PP**), schaalbaarheid (**OO**).
+- Opbouw: Vandaag → Tegelijk → Daarom (de opgave).
+- Vandaag: veel routes (mailboxen, formulieren, losse medewerkers), elk team eigen definities, tools en oplevering, met als gevolg veel maatwerk en lange doorlooptijden – **PD**, dia "Thema – Optimalisatie van data-uitgifte". "Tools" is een aanpassing van de opsteller; de bron noemt "templates".
+- Tegelijk: fusie (**PP** 1.2), verwachtingen veld (**PD** thema-dia, **PP** 1.2), databeschikbaarheid (**OO**, **BR**), EHDS/HDAB-NL (**PD**, **PP**), schaalbaarheid (**OO**).
 - EHDS-rol (Trusted Health Data Holder of Health Data Intermediation Entity) wordt verkend – **PP** 1.2 (opmerking) → *Nog te besluiten*.
 
 ### 3. Toekomstbeeld
 - Eindbeeld "Eén centrale ingang …" – **BR**; vergelijkbaar in **PP** 2.1 en **OO**.
 - Vier domeinen NKR, KR, KvL, PZ – **PP**, **PD**.
 - Processtappen intake, toetsing, prioritering, levering, evaluatie – **OO**.
-- Soorten vragen en levervormen (dashboards, beveiligde omgevingen, bestanden, API's) – **OO** scope.
-- Gebruikers (ziekenhuizen, onderzoekers, beleidsmakers, netwerken) – **PD** thema-dia.
-- KPI-voorstel 1-loket (8,0 en 75% binnen 100 dagen) – **PD** opdrachtomschrijving 1-dataloket → *Voorstel*.
+- Levervormen: dashboards, bestanden en API's, en **indien nodig** een beveiligde omgeving – **OO** scope; "indien nodig" op aanwijzing van de opsteller.
+- 'Wens voor data en/of informatie' als startpunt van het schema – formulering van de opsteller.
+- Weggelaten op de dia: KPI-voorstel 1-loket (8,0 en 75% binnen 100 dagen) – **PD** opdrachtomschrijving 1-dataloket → *Voorstel*.
+- Weggelaten op de dia: de zes soorten vragen (wetenschappelijk, maatwerk, standaard, dashboards, spiegelinformatie, (inter)nationaal) en de doelgroepen (ziekenhuizen, onderzoekers, beleidsmakers, netwerken).
 
 ### 4. Wat moeten we organiseren?
-- Lagen en inhoud – **OO** (resultaten, scope, ontwerpprincipes), **PD** (1-loket, 1-etalage).
+- Lagen en inhoud – **OO** (resultaten, scope), **PD** (1-loket, 1-etalage).
 - "Technische koppelingen vallen onder architectuur en dataplatform" – **OO**, besluitpunt bij vaststelling → *Voorstel*.
-- Ontwerpprincipes – **OO** → *Voorstel*.
-- Buiten de opdracht – **OO** scope.
+- Weggelaten op de dia: de ontwerpprincipes (**OO**, *Voorstel*): klantwaarde vóór productwaarde; hergebruik vóór maatwerk; standaardisatie vóór uitzonderingen; één proces waar het kan, variatie waar het moet; producten versterken elkaar; besluiten op basis van gebruik, impact en klantwaarde.
 
 ### 5. Wie zijn betrokken?
-- Kernteam en schil met namen en rollen – **OO** (concept). Bemensing staat als *concept, nog vast te stellen*.
-- "1 of 2 collega's vanuit DICA" – **OO** → *Nog in te vullen*.
-- **Let op:** de briefing noemde een andere samenstelling (o.a. Willem Schilte in het kernteam, BI-team, data engineer). De presentatie volgt de recentere concept-opdrachtomschrijving van 10 sep 2026, waarin Willem Schilte in de schil staat.
+- Kernteam en schil met namen en rollen – **TS** (teamsamenstelling oktober 2026, aangeleverd door de opsteller).
+- Kernteam: Thijs van Vegchel (werkpakketleider), Mirthe Groothuis (mede-werkpakketleider), Gemma Timmermans (analist, product owner DataLOKET), Marjolein Verhoeven (informatieanalist), Marc Klaassen (BI-specialist), Sandra van der Kooij (informatieanalist).
+- Schil: Willem Schilte, Remy Broos, Eva Mezei, Annemarie Eeltink, Rian Schobers, Baukje Dijkstra, en nog in te vullen collega's vanuit DICA.
+- Aandachtspunten: meer collega's vanuit DICA gezocht; de verbinding met de EHDS moet opnieuw worden gezocht – **TS**.
+- Let op: het programmadeck schrijft "Sandra van de Kooij"; de presentatie volgt de spelling van de opsteller, "Sandra van der Kooij".
 
 ### 6. Projecten en activiteiten
 | Project | Bronnaam | Status in presentatie | Bron |
 |---|---|---|---|
-| Visie en strategie data-uitgifte | "Visie en strategie voor data-uitgifte" / "Strategie vorming" | Concept-opdrachtomschrijving | PP 2.2.2, PD dia 18, OO |
-| Eén Etalage | WP1 1-etalage | In afrondende fase (stand PD) | PD |
-| Eén (data)loket | WP6 1-loket / 1-dataloket | Opdrachtomschrijving concept; start later | PD |
+| Visie en strategie | "Visie en strategie voor data-uitgifte" / "Strategie vorming" | In concept | PP 2.2.2, PD dia 18, OO |
+| Eén Etalage | WP1 1-etalage | Afrondend (stand PD) | PD |
+| Eén (data)loket | WP6 1-loket / 1-dataloket | Start later | PD |
 | Koppelen DICA-IKNL | WP7 Koppeling DUCA<>NKR / Koppelen DICA-IKNL | On hold (grondslagen) | PD, PP |
-| Inlezen en uitgeven niet-NKR-data | Spoor 4 (Thema 1) | Status niet in bronnen | PD dia 13, PP 2.2.1 |
-| Harmonisatie & standaardisatie, Architectuur (huidige stromen), Datakwaliteit, EHDS, CancerLink | Naastliggende thema's/initiatieven | Raakvlak | PP, OO |
-| Operationele projecten 2027 | – | Nog te benoemen | OO (roadmap) |
+| Niet-NKR-data | Spoor 4 (Thema 1) | Status onbekend | PD dia 13, PP 2.2.1 |
+| Harmonisatie, Architectuur, Datakwaliteit | Naastliggende thema's | Lopend | PP |
+| EHDS en CancerLink | Bestaande initiatieven | Opnieuw verbinden | OO, TS |
+| Projecten 2027 | – | Nog te benoemen | OO (roadmap) |
 
 Statussen komen uit programmadocumenten van januari–mei 2026 en kunnen inmiddels zijn veranderd. **Controleer ze vóór het gesprek.**
 
 ### 7. Roadmap 2026–2028
-- Datastrategie vastgesteld nov 2025; programma gestart 1 feb 2026, loopt tot 1 feb 2031 – **PD**, **PP** → *Vastgesteld*.
+- Programma gestart 1 feb 2026, loopt tot 1 feb 2031 – **PD**, **PP** → *Vastgesteld*.
 - Concept-opdrachtomschrijving 10 sep 2026 – **OO**.
-- 1-etalage planning maart–juli 2026 ("opzet") – **PD**.
+- Opdracht definitief november 2026; team compleet december 2026 – **TS** (planning van de opsteller).
 - Fasen 1–4 – **OO** (zonder jaartallen).
 - "Eind 2027 gedragen en bestuurlijk vastgesteld toekomstbeeld" en "voor 2027 minimaal de projecten benoemd" – **OO**.
 - 2028: geen inhoud in de bronnen → *Nog uit te werken*.
 - De beweging Visie & kaders → Beproeven & uniformeren → Opschalen & borgen is een **redactionele indeling**; de koppeling aan jaartallen is als *indicatief* gemarkeerd.
-- "In 2026 nog geen volle snelheid; realistische meerjarenroadmap pas na juridische fusie" – **PD-jan** dia 3.
+- Weggelaten op de dia: datastrategie vastgesteld nov 2025 (staat op dia 8); Eén Etalage maart–juli 2026 (**PD**); "realistische meerjarenroadmap pas na juridische fusie" (**PD-jan** dia 3).
 
 ### 8. Bestuurlijke aandachtspunten
-Alle punten zijn herleidbaar tot **OO**, **PD** of **PP**; zie de bronvermelding per item in `js/content.js` (veld `bron`).
+| Punt | Bron |
+|---|---|
+| Datastrategie vastgesteld (nov 2025) | PP 1.1 |
+| Programma loopt 2026–2031; opdrachtgever RvB, gedelegeerd aan Martin van Mierloo en Robert de Bie; programmamanager Anne Steutel | PD |
+| Data-uitgifte is een van vijf thema's, met in ieder geval Etalage, Loket en Koppelen; er komen projecten bij | PP 2.1–2.2; TS |
+| Huidige dienstverlening loopt door (voorstel; bovenaan op verzoek van de opsteller) | OO |
+| Eén ingang voor vier domeinen | PP; PD 1-dataloket |
+| Eerst wetenschappelijke aanvragen (voorstel) | OO |
+| Opdracht, mandaat en capaciteit vaststellen | OO |
+| Rol in de EHDS | PP 1.2 |
+| Privacycommissies samenvoegen | PD 1-dataloket; OO |
+| Toekomstbeeld eind 2027 | OO |
+| Risico capaciteit | PD-jan dia 3 |
+| Risico fusie en grondslagen | PP 2.4 |
+| Risico verbinding met EHDS | TS |
+| Risico niets doen | PD thema-dia |
+
+Weggelaten op de dia: functionele eisen vs. techniek (staat op dia 4), wat standaard/selfservice/maatwerk wordt, portfoliokeuzes, KPI's na nulmeting (staat op dia 3), brede scope, afhankelijkheid van andere thema's.
 
 ### 9. Slot
 - Boodschap en drie begrippen – **BR**.
