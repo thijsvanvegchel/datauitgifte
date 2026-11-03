@@ -6,11 +6,11 @@
   "use strict";
 
   var C = window.CONTENT || {};
-  var STAGE_W = 1600, STAGE_H = 900, BAR_H = 64;
+  var STAGE_W = 1600, STAGE_H = 900, BAR_H = 56;
   var STATUS = {
     vast: "Vastgesteld",
     richting: "Richting",
-    concept: "Voorstel / concept",
+    concept: "Voorstel",
     open: "Nog te besluiten",
     hold: "On hold"
   };
@@ -30,6 +30,10 @@
   };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var tag = function (status, label) { return '<span class="tag tag--' + status + '">' + esc(label || STATUS[status]) + "</span>"; };
+  /* Voert een onderdeel uit; bij een fout blijft de rest van de presentatie werken. */
+  var safe = function (naam, fn) {
+    try { fn(); } catch (e) { if (window.console) console.error("Onderdeel '" + naam + "' kon niet laden:", e); }
+  };
   var pressOnly = function (buttons, active) {
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === active ? "true" : "false"); });
   };
@@ -47,7 +51,7 @@
     s.setAttribute("aria-roledescription", "dia");
     s.setAttribute("aria-label", (i + 1) + " van " + total + ": " + s.dataset.title);
     var num = $(".slide-num", s);
-    if (num) num.textContent = String(i + 1).padStart(2, "0") + " / " + String(total).padStart(2, "0");
+    if (num) num.textContent = (i + 1) + " / " + total;
   });
 
   var dots = $("#dots");
@@ -94,7 +98,7 @@
       slides.forEach(function (s) { s.removeAttribute("inert"); s.removeAttribute("aria-hidden"); s.classList.add("is-active"); });
       return;
     }
-    var s = Math.min((window.innerWidth - 32) / STAGE_W, (window.innerHeight - BAR_H - 16) / STAGE_H);
+    var s = Math.min((window.innerWidth - 16) / STAGE_W, (window.innerHeight - BAR_H - 8) / STAGE_H);
     stage.style.transform = "translate(-50%, -50%) scale(" + s + ")";
     go(current, { silent: true });
   }
@@ -106,7 +110,7 @@
   var lastFocus = null;
   slides.forEach(function (s, i) {
     var b = el("button", { "class": "ov-card", type: "button" },
-      '<span class="n">' + String(i + 1).padStart(2, "0") + "</span><strong>" + esc(s.dataset.title) + "</strong><span>" + esc(s.dataset.kern || "") + "</span>");
+      '<span class="n">' + (i + 1) + "</span><strong>" + esc(s.dataset.title) + "</strong>");
     b.addEventListener("click", function () { closeOverview(); go(i); });
     ovGrid.appendChild(b);
   });
@@ -121,14 +125,26 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   $("#btnOverview").addEventListener("click", openOverview);
+
+  /* ---------- Achtergrondstijl (keuze in het overzicht) ----------
+     Pas de standaard aan via data-stijl="a|b|c|d" op <body> in index.html. */
+  var styleBtns = $$("#stylePicker [data-stijl]");
+  function setStyle(v, remember) {
+    document.body.setAttribute("data-stijl", v);
+    styleBtns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.stijl === v ? "true" : "false"); });
+    if (remember) { try { localStorage.setItem("dataUitgifteStijl", v); } catch (e) { /* geen opslag beschikbaar */ } }
+  }
+  styleBtns.forEach(function (b) { b.addEventListener("click", function () { setStyle(b.dataset.stijl, true); }); });
+  var savedStyle = null;
+  try { savedStyle = localStorage.getItem("dataUitgifteStijl"); } catch (e) { /* geen opslag beschikbaar */ }
+  setStyle(/^[abcd]$/.test(savedStyle || "") ? savedStyle : (document.body.getAttribute("data-stijl") || "d"), false);
   $("#btnCloseOverview").addEventListener("click", closeOverview);
 
   /* ---------- Toetsenbord ---------- */
   document.addEventListener("keydown", function (e) {
     if (e.altKey || e.ctrlKey || e.metaKey) return;
     var t = e.target;
-    var typing = t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA");
-    if (typing) return;
+    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA")) return;
 
     if (!overview.hidden) {
       if (e.key === "Escape") { e.preventDefault(); closeOverview(); }
@@ -164,84 +180,53 @@
   });
 
   /* ------------------------------------------------------------------
-     2 · Ontwikkelingen
+     Dia 3 · Toekomstbeeld
      ------------------------------------------------------------------ */
-  (function forces() {
-    var map = $("#forcesMap"), lines = $("#forcesLines"), detail = $("#forceDetail");
-    if (!map || !C.forces) return;
-    var pos = [[13, 22], [50, 8], [86, 22], [20, 89], [80, 89]];
-    var btns = [];
-    C.forces.forEach(function (f, i) {
-      var p = pos[i % pos.length];
-      lines.appendChild(svgEl("line", {
-        x1: 50, y1: 50, x2: p[0], y2: p[1],
-        stroke: "var(--warm-grey-25)", "stroke-width": 2, "vector-effect": "non-scaling-stroke"
-      }));
-      var b = el("button", { "class": "force", type: "button", "aria-pressed": "false" },
-        "<strong>" + esc(f.titel) + "</strong><span>" + esc(f.kort) + "</span>");
-      b.style.left = p[0] + "%";
-      b.style.top = p[1] + "%";
-      b.addEventListener("click", function () {
-        pressOnly(btns, b);
-        detail.innerHTML = "<strong>" + esc(f.titel) + "</strong><p>" + esc(f.tekst) + '</p><p class="src">' + esc(f.bron) + "</p>";
-      });
-      btns.push(b);
-      map.appendChild(b);
-    });
-  })();
-
-  /* ------------------------------------------------------------------
-     3 · Toekomstbeeld
-     ------------------------------------------------------------------ */
-  (function concepts() {
+  safe("concepts", function concepts() {
     var wrap = $("#conceptChips"), detail = $("#conceptDetail"), svg = $("#visionSvg");
     if (!wrap || !C.concepts) return;
     var zones = $$(".zone", svg);
     var btns = [];
+    var hint = detail.innerHTML;
     C.concepts.forEach(function (c) {
       var b = el("button", { "class": "chip", type: "button", "aria-pressed": "false" }, esc(c.titel));
       b.addEventListener("click", function () {
-        var already = b.getAttribute("aria-pressed") === "true";
-        if (already) {
+        if (b.getAttribute("aria-pressed") === "true") {
           pressOnly(btns, null);
           svg.classList.remove("is-focused");
           zones.forEach(function (z) { z.classList.remove("is-lit"); });
-          detail.innerHTML = "<p>Kies een begrip om te zien wat het in de praktijk betekent.</p>";
+          detail.innerHTML = hint;
           return;
         }
         pressOnly(btns, b);
         svg.classList.add("is-focused");
         zones.forEach(function (z) { z.classList.toggle("is-lit", c.zones.indexOf(z.dataset.zone) > -1); });
-        detail.innerHTML = '<div class="concept-detail__head"><strong>' + esc(c.titel) + "</strong>" + tag(c.status) +
-          "</div><p>" + esc(c.tekst) + '</p><p class="src">' + esc(c.bron) + "</p>";
+        detail.innerHTML = "<p>" + esc(c.tekst) + "</p>";
       });
       btns.push(b);
       wrap.appendChild(b);
     });
-  })();
+  });
 
   /* ------------------------------------------------------------------
-     4 · Lagen
+     Dia 4 · Lagen
      ------------------------------------------------------------------ */
-  (function layers() {
+  safe("layers", function layers() {
     var wrap = $("#layers"), detail = $("#layerDetail");
     if (!wrap || !C.layers) return;
     var btns = [];
     var addedLine = false;
-    C.layers.forEach(function (l, i) {
+    C.layers.forEach(function (l) {
       if (!l.zichtbaar && !addedLine) {
         wrap.appendChild(el("div", { "class": "waterline", "aria-hidden": "true" }, "Onder de motorkap"));
         addedLine = true;
       }
       var b = el("button", { "class": "layer" + (l.zichtbaar ? " layer--front" : ""), type: "button", "aria-pressed": "false" },
-        '<span class="layer__n">' + String(i + 1).padStart(2, "0") + '</span><span class="layer__t">' + esc(l.titel) +
-        '</span><span class="layer__q">' + esc(l.vraag) + "</span>");
+        '<span class="layer__t">' + esc(l.titel) + '</span><span class="layer__q">' + esc(l.vraag) + "</span>");
       b.addEventListener("click", function () { show(l, b); });
       btns.push(b);
       wrap.appendChild(b);
     });
-    var cap = el("p", { "class": "layers__caption" }, "<span>Zichtbaar voor de aanvrager: lagen 1–2</span><span>Klik op een laag</span>");
-    wrap.insertBefore(cap, wrap.firstChild);
 
     function show(l, b) {
       pressOnly(btns, b);
@@ -249,34 +234,31 @@
         '<p class="panel-label">' + (l.zichtbaar ? "Zichtbaar voor de aanvrager" : "Onder de motorkap") + "</p>" +
         "<h3>" + esc(l.titel) + "</h3>" +
         "<ul>" + l.punten.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") + "</ul>" +
-        '<div class="layer-detail__meta"><div><p class="panel-label">Rol van het werkpakket</p><p>' + esc(l.rol) + "</p></div>" +
-        '<div><p class="panel-label">Afhankelijk van</p><div class="pills">' +
-        l.afhankelijk.map(function (a) { return '<span class="pill">' + esc(a) + "</span>"; }).join("") + "</div></div></div>" +
-        '<p class="src">' + esc(l.bron) + "</p>";
+        '<p class="layer-detail__rol"><strong>Wie</strong>' + esc(l.rol) + "</p>";
     }
     show(C.layers[0], btns[0]);
-  })();
+  });
 
   /* ------------------------------------------------------------------
-     5 · Betrokkenen
+     Dia 5 · Betrokkenen
      ------------------------------------------------------------------ */
-  (function team() {
-    var svg = $("#teamSvg"), card = $("#personCard"), pills = $("#depPills");
+  safe("team", function team() {
+    var svg = $("#teamSvg"), card = $("#personCard");
     if (!svg || !C.team) return;
-    var cx = 380, cy = 380, R1 = 190, R2 = 300;
+    var cx = 450, cy = 400, R1 = 205, R2 = 345;
     svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R2 + 52, fill: "var(--green-25)" }));
-    svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R1 + 58, fill: "var(--blue-25)" }));
-    svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 86, fill: "var(--warm-grey)" }));
-    [["Werkpakket", 372, 14, 500], ["Data-uitgifte", 394, 20, 700]].forEach(function (t) {
+    svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R1 + 62, fill: "var(--blue-25)" }));
+    svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 96, fill: "var(--warm-grey)" }));
+    [["Werkpakket", 390, 19, 500], ["Data-uitgifte", 420, 26, 700]].forEach(function (t) {
       var tx = svgEl("text", { x: cx, y: t[1], "text-anchor": "middle", "font-size": t[2], "font-weight": t[3], fill: "var(--white)" });
       tx.textContent = t[0];
       svg.appendChild(tx);
     });
 
     var nodes = [];
-    function initials(n) {
-      if (/^\d/.test(n)) return "?";
-      var parts = n.split(" ");
+    function initials(p) {
+      if (p.open) return "?";
+      var parts = p.naam.split(" ");
       return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
     }
     function place(list, R, kind, r) {
@@ -286,20 +268,19 @@
         var g = svgEl("g", { "class": "node", tabindex: "0", role: "button", "aria-pressed": "false",
           "aria-label": p.naam + ", " + p.rol + (kind === "kern" ? ", kernteam" : ", schil") });
         var fill = p.open ? "var(--white)" : (kind === "kern" ? "var(--blue)" : "var(--green)");
-        var dot = svgEl("circle", { "class": "node__dot", cx: x, cy: y, r: r, fill: fill,
-          stroke: p.open ? "var(--warm-grey)" : "var(--white)", "stroke-width": p.open ? 2 : 3,
-          "stroke-dasharray": p.open ? "5 4" : "none" });
-        g.appendChild(dot);
-        var ini = svgEl("text", { x: x, y: y + 6, "text-anchor": "middle", "font-size": 17, "font-weight": 700,
+        g.appendChild(svgEl("circle", { "class": "node__dot", cx: x, cy: y, r: r, fill: fill,
+          stroke: p.open ? "var(--warm-grey)" : "var(--white)", "stroke-width": p.open ? 3 : 4,
+          "stroke-dasharray": p.open ? "6 5" : "none" }));
+        var ini = svgEl("text", { x: x, y: y + 8, "text-anchor": "middle", "font-size": 22, "font-weight": 700,
           fill: kind === "kern" && !p.open ? "var(--white)" : "var(--warm-grey)" });
-        ini.textContent = initials(p.naam);
+        ini.textContent = initials(p);
         g.appendChild(ini);
         var words = p.naam.split(" ");
         var l1 = words.shift(), l2 = words.join(" ");
-        if (/^\d/.test(p.naam)) { l1 = "1 à 2 collega's"; l2 = "DICA"; }
         [l1, l2].forEach(function (line, k) {
-          var tx = svgEl("text", { x: x, y: y + r + 18 + k * 17, "text-anchor": "middle", "font-size": 16,
-            "font-weight": k === 0 ? 600 : 400, fill: "var(--warm-grey)" });
+          if (!line) return;
+          var tx = svgEl("text", { x: x, y: y + r + 24 + k * 23, "text-anchor": "middle", "font-size": 21,
+            "font-weight": k === 0 ? 700 : 400, fill: "var(--warm-grey)" });
           tx.textContent = line;
           g.appendChild(tx);
         });
@@ -312,49 +293,41 @@
         svg.appendChild(g);
       });
     }
-    place(C.team.kern, R1, "kern", 30);
-    place(C.team.schil, R2, "schil", 27);
+    place(C.team.kern, R1, "kern", 36);
+    place(C.team.schil, R2, "schil", 32);
 
     function select(p, g, kind) {
       nodes.forEach(function (n) { n.setAttribute("aria-pressed", n === g ? "true" : "false"); });
-      var status = p.open ? tag("open", "Nog in te vullen") : tag("concept", kind === "kern" ? "Kernteam · concept" : "Schil · concept");
+      var status = p.open ? tag("open", "Nog in te vullen") : tag(kind === "kern" ? "richting" : "concept", kind === "kern" ? "Kernteam" : "Schil");
       card.innerHTML = '<div class="legend">' + status + "</div><h3>" + esc(p.naam) + '</h3><p class="role">' + esc(p.rol) + "</p><p>" + esc(p.brengt) + "</p>";
     }
     select(C.team.kern[0], nodes[0], "kern");
-
-    C.team.afhankelijk.forEach(function (a) { pills.appendChild(el("span", { "class": "pill" }, esc(a))); });
-  })();
+  });
 
   /* ------------------------------------------------------------------
-     6 · Projecten
+     Dia 6 · Projecten
      ------------------------------------------------------------------ */
-  (function projects() {
+  safe("projects", function projects() {
     var wrap = $("#projectGroups"), detail = $("#projectDetail");
     if (!wrap || !C.projects) return;
     var groups = [
-      { id: "binnen", label: "Binnen het thema Data-uitgifte", sub: "projecten uit het programma" },
-      { id: "naast", label: "Ernaast", sub: "met directe raakvlakken" },
-      { id: "volgt", label: "Volgt", sub: "uit dit werkpakket" }
+      { label: "Binnen het thema Data-uitgifte", ids: ["binnen"], small: false },
+      { label: "Ernaast en daarna", ids: ["naast", "volgt"], small: true }
     ];
     var btns = [];
     groups.forEach(function (g) {
-      var items = C.projects.filter(function (p) { return p.groep === g.id; });
+      var items = C.projects.filter(function (p) { return g.ids.indexOf(p.groep) > -1; });
       if (!items.length) return;
       var sec = el("div", { "class": "pgroup" });
-      sec.appendChild(el("p", { "class": "pgroup__label" }, esc(g.label) + " <span>" + esc(g.sub) + "</span>"));
-      var grid = el("div", { "class": "pgrid" + (items.length === 5 ? " pgrid--5" : "") });
-      if (items.length === 1) grid.style.gridTemplateColumns = "minmax(0, 1fr) minmax(0, 3fr)";
+      sec.appendChild(el("p", { "class": "panel-label" }, esc(g.label)));
+      var grid = el("div", { "class": "pgrid" + (g.small ? " pgrid--small" : "") });
       items.forEach(function (p) {
-        var b = el("button", { "class": "pcard pcard--" + g.id, type: "button", "aria-pressed": "false" },
-          "<strong>" + esc(p.titel) + '</strong><span class="sub">' + esc(p.sub) + "</span>" + tag(p.status, p.label));
+        var b = el("button", { "class": "pcard pcard--" + p.groep, type: "button", "aria-pressed": "false" },
+          "<strong>" + esc(p.titel) + "</strong>" + tag(p.status, p.label));
         b.addEventListener("click", function () { show(p, b); });
         btns.push(b);
         grid.appendChild(b);
       });
-      if (items.length === 1) {
-        grid.appendChild(el("p", { "class": "src", style: "align-self:center" },
-          "Projectnamen komen uit het programmaplan en het programmadeck. Statussen zijn de stand in die documenten; controleer ze vóór het gesprek."));
-      }
       sec.appendChild(grid);
       wrap.appendChild(sec);
     });
@@ -366,14 +339,12 @@
         "<h3>" + esc(p.titel) + "</h3>" +
         "<dl>" +
         "<div><dt>Doel</dt><dd>" + esc(p.doel) + "</dd></div>" +
-        "<div><dt>Relatie met het toekomstbeeld</dt><dd>" + esc(p.relatie) + "</dd></div>" +
         "<div><dt>Status</dt><dd>" + esc(p.statusTekst) + "</dd></div>" +
-        '<div><dt>Afhankelijkheden</dt><dd><div class="pills">' + p.afh.map(function (a) { return '<span class="pill">' + esc(a) + "</span>"; }).join("") + "</div></dd></div>" +
-        "</dl>" +
-        '<p class="note src">' + esc(p.bron) + "</p>";
+        "<div><dt>Afhankelijk van</dt><dd>" + p.afh.map(esc).join(", ") + "</dd></div>" +
+        "</dl>";
     }
     show(C.projects[0], btns[0]);
-  })();
+  });
 
   /* ------------------------------------------------------------------
      Start
