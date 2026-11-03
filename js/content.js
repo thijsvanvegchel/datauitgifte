@@ -27,22 +27,20 @@ window.CONTENT = {
 
   /* ---------- Dia 3: kernbegrippen toekomstbeeld ----------
      'zones' bepaalt welk deel van het schema oplicht:
-     vragen | etalage | ingang | proces | kaders | levering            */
+     vragen | etalage | informatie | ingang | proces | kaders | levering            */
   concepts: [
     {
       id: "ingang",
       titel: "Eén ingang",
-      zones: ["vragen", "etalage", "ingang"],
-      tekst: "Eén plek om data aan te vragen voor NKR, KR, KvL en PZ. De Etalage laat zien wát er is, het Loket regelt hóe je het krijgt.",
-      status: "richting",
-      bron: "OO; PD 1-dataloket"
+      zones: ["vragen", "etalage", "informatie", "ingang"],
+      tekst: "Je begint altijd bij de Etalage. Informatie gebruik je daar direct; data vraag je aan via het Loket, voor NKR, KR, KvL en PZ.",
+      bron: "OO; PD 1-dataloket; TS"
     },
     {
       id: "uniform",
       titel: "Uniform",
       zones: ["proces"],
-      tekst: "Elke aanvraag doorloopt dezelfde stappen, ongeacht team of medewerker. Eén proces waar het kan, variatie waar het moet.",
-      status: "richting",
+      tekst: "Elke data-aanvraag doorloopt dezelfde stappen, ongeacht team of medewerker. Eén proces waar het kan, variatie waar het moet.",
       bron: "OO; PD thema-dia"
     },
     {
@@ -50,23 +48,20 @@ window.CONTENT = {
       titel: "Voorspelbaar",
       zones: ["ingang", "proces", "levering"],
       tekst: "Aanvragers weten vooraf wat kan en hoe lang het duurt.",
-      status: "concept",
       bron: "PD 1-dataloket; OO"
     },
     {
       id: "schaalbaar",
       titel: "Schaalbaar",
-      zones: ["etalage", "levering"],
-      tekst: "Wat vaak voorkomt, standaardiseren of automatiseren we. Maatwerk blijft mogelijk waar het nodig is.",
-      status: "richting",
-      bron: "OO"
+      zones: ["etalage", "informatie"],
+      tekst: "Wat vaak gevraagd wordt, bieden we standaard aan, bij voorkeur als informatieproduct. Maatwerk blijft mogelijk waar het nodig is.",
+      bron: "OO; TS"
     },
     {
       id: "veilig",
       titel: "Veilig & betrouwbaar",
       zones: ["kaders", "levering"],
       tekst: "Eén toetsingskader en één centrale privacycommissie. Indien nodig leveren we in een beveiligde omgeving.",
-      status: "richting",
       bron: "OO; PD 1-dataloket"
     }
   ],
@@ -83,20 +78,20 @@ window.CONTENT = {
         "Per product: doelgroep, gebruik en eigenaar",
         "Keuzes: behouden, samenvoegen of stoppen"
       ],
-      rol: "Samen met Eén Etalage",
+      rol: "Project Eén Etalage",
       bron: "OO; PD 1-etalage"
     },
     {
       id: "loket",
       titel: "Loket",
-      vraag: "Hoe vraag je iets aan?",
+      vraag: "Hoe vraag je data aan?",
       zichtbaar: true,
       punten: [
-        "Eén plek om aan te vragen, voor vier domeinen",
+        "Eén plek om data aan te vragen, voor vier domeinen",
         "Eén aanvraagformulier",
         "Vooraf duidelijk: selfservice, standaard of maatwerk"
       ],
-      rol: "Uitgevoerd via Eén Loket",
+      rol: "Project Eén Loket",
       bron: "OO; PD 1-dataloket"
     },
     {
@@ -141,7 +136,7 @@ window.CONTENT = {
   ],
 
   /* ---------- Dia 5: betrokkenen ----------
-     Samenstelling oktober 2026.
+     Samenstelling november 2026, intern afgestemd met DICA.
      Zet "open: true" bij een plek die nog niet is ingevuld.          */
   team: {
     kern: [
@@ -150,7 +145,7 @@ window.CONTENT = {
       { naam: "Gemma Timmermans", rol: "Analist", brengt: "Vertegenwoordigt de huidige praktijk van NKR-analyse. Product owner DataLOKET." },
       { naam: "Marjolein Verhoeven", rol: "Informatieanalist", brengt: "Vertegenwoordigt de DICA-praktijk: productportfolio, metadata en informatieproducten." },
       { naam: "Marc Klaassen", rol: "BI-specialist", brengt: "Vanuit team BI: kennis van dashboards, BI-producten en selfservice." },
-      { naam: "Sandra van der Kooij", rol: "Informatieanalist", brengt: "Verbindende schakel met Harmonisatie & Standaardisatie." }
+      { naam: "Alexander Dank", rol: "Data engineer", brengt: "Vanuit DICA." }
     ],
     schil: [
       { naam: "Willem Schilte", rol: "Hoofd Software Development", brengt: "Architectuur, technische koers en aansluiting op het dataplatform." },
@@ -159,7 +154,10 @@ window.CONTENT = {
       { naam: "Annemarie Eeltink", rol: "Analist", brengt: "Verbindende schakel met het project Uitgeven niet-NKR-data." },
       { naam: "Rian Schobers", rol: "Software developer", brengt: "Gebruiksvriendelijkheid, toegankelijkheid en gebruikerservaring." },
       { naam: "Baukje Dijkstra", rol: "Communicatie", brengt: "Adoptie, stakeholdermanagement, positionering en communicatie." },
-      { naam: "Collega's DICA", rol: "Nog in te vullen", brengt: "We zoeken nog meer collega's vanuit de kwaliteitsregistraties of de dienstverlening van DICA.", open: true }
+      { naam: "Berend de Jong", rol: "Informatieanalist", brengt: "Vanuit DICA." },
+      { naam: "Varisha Makhanlal", rol: "Informatieanalist", brengt: "Vanuit DICA." },
+      { naam: "Lennard van Wanrooij", rol: "Product owner", brengt: "Vanuit DICA." },
+      { naam: "Marcel van Willigen", rol: "Data engineer", brengt: "Vanuit DICA." }
     ]
   },
 
