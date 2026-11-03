@@ -60,6 +60,8 @@ Werk je in `index.html` of in `css/` of `js/`? Draai daarna `python3 tools/bouw-
 
 ## Vormgeving
 
+- **Ingericht op kleine schermen:** weinig tekst per dia en grote letters. De kleinste tekst op een dia is 20 px (op een laptop van 1366 px breed nog ruim 16 px). Houd nieuwe teksten even kort: titels tot ongeveer 25 tekens, toelichtingen maximaal twee korte zinnen. Details die van de dia's zijn gehaald, staan in `docs/contentmodel.md`.
+
 - Er was geen CSS-bestand bijgevoegd. Het **Aurea brand book** (kleurenkaart en WCAG-richtlijnen) is gebruikt als stylesheet. Alle kleuren staan als tokens in `css/aurea-tokens.css`.
 - Tekst gebruikt alleen de goedgekeurde contrastcombinaties (minimaal 4,5:1). Baseline Blue wordt alleen voor grote koppen gebruikt, zoals in het brand book zelf.
 - Het lettertype DM Sans wordt via Google Fonts geladen. Zonder internet valt de presentatie terug op Segoe UI of Arial; de layout blijft dan intact.
@@ -68,5 +70,5 @@ Werk je in `index.html` of in `css/` of `js/`? Draai daarna `python3 tools/bouw-
 ## Voor het gesprek controleren
 
 1. **Statussen van projecten** (dia 6) komen uit programmadocumenten van januari tot mei 2026. Werk ze bij als ze inmiddels zijn veranderd.
-2. **Bemensing** (dia 5) volgt de concept-opdrachtomschrijving van 10 september 2026. Die wijkt af van de samenstelling in de oorspronkelijke briefing: Willem Schilte staat daarin in de schil, niet in het kernteam.
+2. **Bemensing** (dia 5) is de teamsamenstelling van oktober 2026. Er wordt nog gezocht naar meer collega's vanuit DICA; die plek staat als 'nog in te vullen'.
 3. **2028** is bewust als 'nog uit te werken' weergegeven, omdat de bronnen daar geen doelen voor noemen.
