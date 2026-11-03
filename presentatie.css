@@ -130,13 +130,11 @@ button { font: inherit; color: inherit; }
 .hero__sub { font-size: 44px; line-height: 1.2; max-width: 860px; text-wrap: balance; }
 .hero__quote {
   position: relative;
-  max-width: 760px;
-  font-size: 32px; line-height: 1.35;
+  font-size: 29px; line-height: 1.4;
   color: var(--peach);
   padding-left: 28px;
   border-left: 4px solid var(--peach);
 }
-.hero__meta { position: relative; }
 
 .flow-line { fill: none; stroke-width: 3; stroke-linecap: round; }
 .draw { stroke-dasharray: 1600; stroke-dashoffset: 1600; }
@@ -145,45 +143,19 @@ button { font: inherit; color: inherit; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 
 /* ==========================================================================
-   2 · Waarom
+   2 · Waarom: vandaag → tegelijk → daarom
    ========================================================================== */
-.why { display: grid; grid-template-columns: 560px 1fr; gap: 40px; flex: 1; min-height: 0; }
-
-.today { background: var(--white); padding: 32px 36px; display: grid; gap: 24px; align-content: start; }
-.big-list { display: grid; gap: 22px; }
-.big-list li { display: grid; gap: 2px; padding-left: 28px; position: relative; }
-.big-list li::before { content: ""; position: absolute; left: 0; top: 12px; width: 14px; height: 14px; border-radius: 50%; background: var(--peach); }
-.big-list strong { font-size: 30px; line-height: 1.2; }
-.big-list span { font-size: 24px; }
-
-.changes { display: grid; gap: 16px; align-content: start; }
-.force-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.force {
-  background: var(--white);
-  border: 3px solid var(--white);
-  padding: 18px 20px;
-  min-height: 92px;
-  text-align: left;
-  font-size: 25px; font-weight: 700; line-height: 1.2;
-  cursor: pointer;
-  transition: border-color .2s, background .2s;
-}
-.force:hover { border-color: var(--blue-50); }
-.force[aria-pressed="true"] { background: var(--warm-grey); color: var(--white); border-color: var(--warm-grey); }
-.force-detail {
-  min-height: 120px;
-  border-left: 4px solid var(--blue);
-  padding: 6px 0 6px 22px;
-  display: grid; gap: 6px; align-content: start;
-  font-size: 25px; line-height: 1.35;
-}
-
-.opgave {
-  background: var(--blue); color: var(--white);
-  padding: 22px 32px;
-  display: grid; gap: 6px;
-}
-.opgave p:last-child { font-size: 32px; line-height: 1.25; font-weight: 600; }
+.why { display: grid; grid-template-columns: 1fr 64px 1fr 64px 1fr; flex: 1; min-height: 0; }
+.why__col { background: var(--white); padding: 34px 36px; display: grid; gap: 18px; align-content: start; }
+.why__step { font-size: 20px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.why__col h3 { font-size: 40px; line-height: 1.1; font-weight: 700; text-wrap: balance; }
+.why__list { display: grid; gap: 16px; font-size: 26px; line-height: 1.3; }
+.why__list li { position: relative; padding-left: 28px; }
+.why__list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 14px; height: 14px; border-radius: 50%; background: var(--peach); }
+.why__col--opgave { background: var(--blue); color: var(--white); }
+.why__col--opgave p:last-child { font-size: 30px; line-height: 1.3; font-weight: 500; }
+.why__arrow { display: grid; place-items: center; color: var(--warm-grey-50); }
+.why__arrow svg { width: 44px; height: 44px; }
 
 /* ==========================================================================
    3 · Toekomstbeeld
@@ -322,14 +294,13 @@ button { font: inherit; color: inherit; }
 .move--3 { background: var(--green); color: var(--warm-grey); }
 
 .years { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; min-height: 0; }
-.year { background: var(--white); padding: 24px 28px; display: grid; gap: 16px; align-content: start; }
+.year { background: var(--white); padding: 22px 26px; display: grid; gap: 14px; align-content: start; }
 .year--open { background: transparent; border: 3px dashed var(--warm-grey-50); }
-.year h3 { font-size: 56px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--blue); }
-.milestones { display: grid; gap: 16px; }
-.ms { display: grid; gap: 6px; justify-items: start; font-size: 25px; line-height: 1.25; padding-top: 14px; border-top: 2px solid var(--warm-grey-25); }
+.year h3 { font-size: 52px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--blue); }
+.milestones { display: grid; gap: 12px; }
+.ms { display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; align-items: start; font-size: 25px; line-height: 1.25; padding-top: 12px; border-top: 2px solid var(--warm-grey-25); }
 .ms:first-child { border-top: 0; padding-top: 0; }
-.ms__when { font-size: 20px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-.ms--key { font-weight: 700; }
+.ms__when { grid-column: 1 / -1; font-size: 20px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .roadmap__foot { font-size: 22px; }
 
 /* ==========================================================================
@@ -454,10 +425,11 @@ button { font: inherit; color: inherit; }
   .hero__sub { font-size: 26px; }
   .hero__quote { font-size: 21px; }
   .why, .organise, .people, .portfolio { grid-template-columns: 1fr; }
-  .force-grid, .pgrid, .pgrid--small { grid-template-columns: 1fr 1fr; }
-  .force, .pcard strong, .pgrid--small .pcard strong, .big-list strong { font-size: 20px; }
-  .big-list span, .force-detail, .hint, .chip, .concept-detail, .layer-detail ul, .person-card p, .attention ul, .pdetail dd, .ms, .item summary { font-size: 18px; }
-  .opgave p:last-child { font-size: 22px; }
+  .why__arrow svg { transform: rotate(90deg); width: 32px; height: 32px; }
+  .hero__quote br { display: none; }
+  .pgrid, .pgrid--small { grid-template-columns: 1fr 1fr; }
+  .pcard strong, .pgrid--small .pcard strong, .why__col h3 { font-size: 22px; }
+  .why__list, .why__col--opgave p:last-child, .hint, .chip, .concept-detail, .layer-detail ul, .person-card p, .attention ul, .pdetail dd, .ms, .item summary { font-size: 18px; }
   .vision-statement { font-size: 26px; }
   .vision__diagram { overflow-x: auto; }
   .vision__diagram svg { min-width: 760px; height: auto; }
@@ -472,6 +444,57 @@ button { font: inherit; color: inherit; }
   .closing__words li { padding: 0; border: 0; }
   .overview__grid { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   Achtergrondvarianten voor de lichte dia's
+   Kies in het overzicht (Esc) of zet data-stijl op <body> in index.html.
+   ========================================================================== */
+.style-picker { display: grid; gap: 10px; padding-top: 8px; }
+.style-picker__label { font-size: 15px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.style-picker__options { display: flex; flex-wrap: wrap; gap: 10px; }
+.style-picker .ctrl[aria-pressed="true"] { background: var(--warm-grey); color: var(--white); border-color: var(--warm-grey); }
+
+/* A · Donkere rand: Warm Grey rond de dia */
+body[data-stijl="a"] { background: var(--warm-grey); }
+body[data-stijl="a"] .counter,
+body[data-stijl="a"] .kbd-hint { color: var(--white); }
+body[data-stijl="a"] .dot::before { background: var(--warm-grey-75); }
+body[data-stijl="a"] .dot[aria-current="step"]::before { background: var(--white); }
+body[data-stijl="a"] .dot:hover::before { background: var(--warm-grey-25); }
+body[data-stijl="a"] .ctrl { border-color: var(--white); }
+body[data-stijl="a"] .progress { background: var(--warm-grey-75); }
+body[data-stijl="a"] .progress__bar { background: var(--green); }
+body[data-stijl="a"] .slide--dark { box-shadow: 0 0 0 2px var(--warm-grey-75); }
+
+/* B · Witte dia: witte dia op lichtgrijs, kaarten in lichtgrijs */
+body[data-stijl="b"] .slide:not(.slide--dark) {
+  --white: #FFFFFF;
+  --card: var(--canvas);
+  background: var(--white);
+  box-shadow: 0 0 0 2px var(--warm-grey-25), 0 16px 48px rgba(77, 75, 72, .16);
+}
+body[data-stijl="b"] .slide:not(.slide--dark) :is(.why__col:not(.why__col--opgave), .vision__diagram, .layer:not(.layer--front):not([aria-pressed="true"]), .layer-detail, .person-card, .pcard:not(.pcard--volgt), .pdetail, .year:not(.year--open), .item, .chip:not([aria-pressed="true"])) {
+  background: var(--canvas);
+  border-color: var(--canvas);
+}
+body[data-stijl="b"] .slide:not(.slide--dark) .vision__diagram rect[fill="var(--canvas)"] { fill: var(--white); }
+
+/* C · Blauwe kopbalk: titelbalk in Baseline Blue */
+body[data-stijl="c"] .slide:not(.slide--dark) .slide-head {
+  margin: -56px -80px 0;
+  padding: 40px 80px 26px;
+  background: var(--blue);
+  color: var(--white);
+}
+body[data-stijl="c"] .slide:not(.slide--dark) .slide-title,
+body[data-stijl="c"] .slide:not(.slide--dark) .vision-statement { color: var(--white); }
+body[data-stijl="c"] .slide:not(.slide--dark) .why__col--opgave { background: var(--warm-grey); }
+body[data-stijl="c"] .slide:not(.slide--dark) .slide-head .slide-title { font-size: 64px; }
+
+/* D · Lichtblauwe rand: Baseline Blue 25% rond de dia */
+body[data-stijl="d"] { background: var(--blue-25); }
+body[data-stijl="d"] .slide { box-shadow: 0 16px 48px rgba(67, 115, 152, .25); }
+body[data-stijl="d"] .progress { background: var(--blue-50); }
 
 /* ---------- Minder beweging ---------- */
 @media (prefers-reduced-motion: reduce) {

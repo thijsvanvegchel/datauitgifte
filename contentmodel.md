@@ -29,14 +29,15 @@ Hiermee kun je controleren dat er niets is verzonnen.
 
 ## Inhoud per scherm
 
-> Versie november 2026: alle dia's zijn ingekort voor presentatie op kleine schermen. Weggelaten details staan hieronder nog vermeld, zodat je ze mondeling kunt toelichten.
+> Versie november 2026: alle dia's zijn ingekort voor presentatie op kleine schermen. Weggelaten details staan hieronder nog vermeld, zodat je ze mondeling kunt toelichten. Bronvermeldingen en statuslabels als 'Voorstel' worden op de dia's niet meer getoond; dit document is de plek om ze na te gaan.
 
 ### 1. Opening
 - Kernzin: "waarde ontstaat pas wanneer gebruikers ze kunnen vinden, begrijpen en toepassen" – **OO**, Aanleiding.
 
 ### 2. Waarom dit werkpakket?
+- Opbouw: Vandaag → Tegelijk → Daarom (de opgave).
 - Vandaag: veel routes (mailboxen, formulieren, losse medewerkers), elk team eigen definities, tools en oplevering, met als gevolg veel maatwerk en lange doorlooptijden – **PD**, dia "Thema – Optimalisatie van data-uitgifte". "Tools" is een aanpassing van de opsteller; de bron noemt "templates".
-- Vijf ontwikkelingen: fusie (**PP** 1.2), verwachtingen veld (**PD** thema-dia, **PP** 1.2), databeschikbaarheid (**OO**, **BR**), EHDS/HDAB-NL (**PD**, **PP**), schaalbaarheid (**OO**).
+- Tegelijk: fusie (**PP** 1.2), verwachtingen veld (**PD** thema-dia, **PP** 1.2), databeschikbaarheid (**OO**, **BR**), EHDS/HDAB-NL (**PD**, **PP**), schaalbaarheid (**OO**).
 - EHDS-rol (Trusted Health Data Holder of Health Data Intermediation Entity) wordt verkend – **PP** 1.2 (opmerking) → *Nog te besluiten*.
 
 ### 3. Toekomstbeeld
@@ -44,7 +45,8 @@ Hiermee kun je controleren dat er niets is verzonnen.
 - Vier domeinen NKR, KR, KvL, PZ – **PP**, **PD**.
 - Processtappen intake, toetsing, prioritering, levering, evaluatie – **OO**.
 - Levervormen: dashboards, bestanden en API's, en **indien nodig** een beveiligde omgeving – **OO** scope; "indien nodig" op aanwijzing van de opsteller.
-- KPI-voorstel 1-loket (8,0 en 75% binnen 100 dagen) – **PD** opdrachtomschrijving 1-dataloket → *Voorstel*.
+- 'Wens voor data en/of informatie' als startpunt van het schema – formulering van de opsteller.
+- Weggelaten op de dia: KPI-voorstel 1-loket (8,0 en 75% binnen 100 dagen) – **PD** opdrachtomschrijving 1-dataloket → *Voorstel*.
 - Weggelaten op de dia: de zes soorten vragen (wetenschappelijk, maatwerk, standaard, dashboards, spiegelinformatie, (inter)nationaal) en de doelgroepen (ziekenhuizen, onderzoekers, beleidsmakers, netwerken).
 
 ### 4. Wat moeten we organiseren?
@@ -76,6 +78,7 @@ Statussen komen uit programmadocumenten van januari–mei 2026 en kunnen inmidde
 ### 7. Roadmap 2026–2028
 - Programma gestart 1 feb 2026, loopt tot 1 feb 2031 – **PD**, **PP** → *Vastgesteld*.
 - Concept-opdrachtomschrijving 10 sep 2026 – **OO**.
+- Opdracht definitief november 2026; team compleet december 2026 – **TS** (planning van de opsteller).
 - Fasen 1–4 – **OO** (zonder jaartallen).
 - "Eind 2027 gedragen en bestuurlijk vastgesteld toekomstbeeld" en "voor 2027 minimaal de projecten benoemd" – **OO**.
 - 2028: geen inhoud in de bronnen → *Nog uit te werken*.
@@ -87,10 +90,10 @@ Statussen komen uit programmadocumenten van januari–mei 2026 en kunnen inmidde
 |---|---|
 | Datastrategie vastgesteld (nov 2025) | PP 1.1 |
 | Programma loopt 2026–2031; opdrachtgever RvB, gedelegeerd aan Martin van Mierloo en Robert de Bie; programmamanager Anne Steutel | PD |
-| Data-uitgifte is een van vijf thema's | PP 2.1–2.2 |
+| Data-uitgifte is een van vijf thema's, met in ieder geval Etalage, Loket en Koppelen; er komen projecten bij | PP 2.1–2.2; TS |
+| Huidige dienstverlening loopt door (voorstel; bovenaan op verzoek van de opsteller) | OO |
 | Eén ingang voor vier domeinen | PP; PD 1-dataloket |
 | Eerst wetenschappelijke aanvragen (voorstel) | OO |
-| Huidige dienstverlening loopt door (voorstel) | OO |
 | Opdracht, mandaat en capaciteit vaststellen | OO |
 | Rol in de EHDS | PP 1.2 |
 | Privacycommissies samenvoegen | PD 1-dataloket; OO |

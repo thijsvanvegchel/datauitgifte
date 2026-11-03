@@ -47,8 +47,7 @@ data-uitgifte/
 
 | Wat | Waar |
 |---|---|
-| Titels, kernzinnen, roadmap, bestuurlijke aandachtspunten, slot | `index.html`: zoek op het commentaar `1 · OPENING`, `7 · ROADMAP` enzovoort |
-| Toelichting bij de vijf ontwikkelingen (dia 2) | `js/content.js` → `forces` |
+| Titels, kernzinnen, dia 2 (Waarom), roadmap, bestuurlijke aandachtspunten, slot | `index.html`: zoek op het commentaar `1 · OPENING`, `7 · ROADMAP` enzovoort |
 | Kernbegrippen van het toekomstbeeld (dia 3) | `js/content.js` → `concepts` |
 | Lagen achter het loket (dia 4) | `js/content.js` → `layers` |
 | Kernteam, schil en afhankelijkheden (dia 5) | `js/content.js` → `team` |
@@ -57,6 +56,21 @@ data-uitgifte/
 Statussen gebruik je met deze waarden: `vast`, `richting`, `concept`, `open` of `hold`. Elke waarde heeft een vaste kleur uit de toegestane WCAG-combinaties.
 
 Werk je in `index.html` of in `css/` of `js/`? Draai daarna `python3 tools/bouw-enkel-bestand.py` om de losse versie in `dist/` bij te werken.
+
+## Achtergrond van de dia's kiezen
+
+Er zijn vier varianten voor de lichte dia's (dia 2 t/m 8):
+
+| Variant | Wat je ziet |
+|---|---|
+| **A · Donkere rand** | Warm Grey rond de dia |
+| **B · Witte dia** | Witte dia op lichtgrijs, kaarten in lichtgrijs |
+| **C · Blauwe kopbalk** | Titelbalk in Baseline Blue |
+| **D · Lichtblauwe rand** | Baseline Blue 25% rond de dia (standaard) |
+
+Wisselen tijdens het bekijken: druk op **Esc** en kies onderaan in het overzicht een variant. Je browser onthoudt de keuze; die gaat dan vóór de standaard.
+
+De standaard voor iedereen zet je in `index.html`, op de regel `<body data-stijl="a">`: vervang `a` door `b`, `c` of `d`.
 
 ## Vormgeving
 
@@ -72,3 +86,9 @@ Werk je in `index.html` of in `css/` of `js/`? Draai daarna `python3 tools/bouw-
 1. **Statussen van projecten** (dia 6) komen uit programmadocumenten van januari tot mei 2026. Werk ze bij als ze inmiddels zijn veranderd.
 2. **Bemensing** (dia 5) is de teamsamenstelling van oktober 2026. Er wordt nog gezocht naar meer collega's vanuit DICA; die plek staat als 'nog in te vullen'.
 3. **2028** is bewust als 'nog uit te werken' weergegeven, omdat de bronnen daar geen doelen voor noemen.
+
+## Bestanden in je GitHub-repo zetten
+
+Zet de bestanden in **dezelfde mappen** als hierboven (`css/`, `js/`, `docs/`, `tools/`, `dist/`). Staan ze los in de hoofdmap, dan laadt `index.html` oude versies uit de mappen en blijven dia's leeg.
+
+Via github.com: open de repo, kies **Add file → Upload files** en sleep de **mappen** (niet de losse bestanden) uit de uitgepakte zip in het venster. Verwijder daarna de losse kopieën in de hoofdmap.

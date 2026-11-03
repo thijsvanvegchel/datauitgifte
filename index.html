@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/aurea-tokens.css">
 <link rel="stylesheet" href="css/presentatie.css">
 </head>
-<body>
+<body data-stijl="d">
 
 <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
 
@@ -54,15 +54,13 @@
         <p class="hero__sub">Van losse routes naar één herkenbare, voorspelbare en schaalbare dienstverlening</p>
       </div>
 
-      <p class="hero__quote">Onze data- en informatieproducten krijgen pas waarde als gebruikers ze kunnen vinden, begrijpen en toepassen.</p>
-
-      <p class="hero__meta"><span class="tag tag--concept">Concept</span></p>
+      <p class="hero__quote">Onze data- en informatieproducten krijgen pas waarde<br>als gebruikers ze kunnen vinden, begrijpen en toepassen.</p>
     </section>
 
     <!-- ================================================================
          2 · WAAROM
          ================================================================ -->
-    <section class="slide" id="dia-2" data-title="Waarom dit werkpakket?" data-kern="Veel routes vandaag, en vijf ontwikkelingen die samenkomen">
+    <section class="slide" id="dia-2" data-title="Waarom dit werkpakket?" data-kern="Veel losse routes en veel verandering: daarom één werkwijze">
       <header class="slide-head">
         <div class="slide-head__text">
           <p class="eyebrow">Waarom</p>
@@ -72,28 +70,37 @@
       </header>
 
       <div class="why">
-        <article class="today" aria-labelledby="today-h">
-          <h3 class="panel-label" id="today-h">Vandaag</h3>
-          <ul class="big-list">
-            <li><strong>Veel routes</strong><span>Mailboxen, formulieren en losse medewerkers</span></li>
-            <li><strong>Elk team een eigen werkwijze</strong><span>Eigen definities, tools en oplevering</span></li>
-            <li><strong>Gevolg</strong><span>Veel maatwerk en lange doorlooptijden</span></li>
+        <article class="why__col">
+          <p class="why__step">Vandaag</p>
+          <h3>Veel losse routes</h3>
+          <ul class="why__list">
+            <li>Aanvragen via mailboxen, formulieren en losse medewerkers</li>
+            <li>Elk team eigen definities, tools en oplevering</li>
+            <li>Veel maatwerk en lange doorlooptijden</li>
           </ul>
         </article>
 
-        <div class="changes">
-          <h3 class="panel-label">Wat verandert</h3>
-          <!-- knoppen worden gevuld vanuit js/content.js (forces) -->
-          <div class="force-grid" id="forceGrid" role="group" aria-label="Ontwikkelingen"></div>
-          <div class="force-detail" id="forceDetail" aria-live="polite">
-            <p class="hint">Klik op een ontwikkeling voor toelichting.</p>
-          </div>
-        </div>
-      </div>
+        <span class="why__arrow" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 20h22M20 9l11 11-11 11" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
 
-      <div class="opgave">
-        <p class="eyebrow">De opgave</p>
-        <p>Veilig en betrouwbaar blijven, en tegelijk uniformer, voorspelbaarder en schaalbaarder worden.</p>
+        <article class="why__col">
+          <p class="why__step">Tegelijk</p>
+          <h3>Verandert er veel</h3>
+          <ul class="why__list">
+            <li>Fusie DICA-IKNL</li>
+            <li>Hogere verwachtingen van het veld</li>
+            <li>Eisen vanuit EHDS en HDAB-NL</li>
+            <li>Positie in databeschikbaarheid behouden</li>
+            <li>Groeiende vraag, gelijke middelen</li>
+          </ul>
+        </article>
+
+        <span class="why__arrow" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 20h22M20 9l11 11-11 11" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+
+        <article class="why__col why__col--opgave">
+          <p class="why__step">Daarom</p>
+          <h3>Eén werkwijze voor data-uitgifte</h3>
+          <p>Veilig en betrouwbaar blijven, en tegelijk uniformer, voorspelbaarder en schaalbaarder worden.</p>
+        </article>
       </div>
     </section>
 
@@ -106,14 +113,14 @@
           <p class="eyebrow">Toekomstbeeld</p>
           <p class="vision-statement">Eén centrale ingang, met een uniforme, voorspelbare en schaalbare afhandeling.</p>
         </div>
-        <div class="legend"><span class="tag tag--richting">Richting</span><span class="slide-num"></span></div>
+        <span class="slide-num"></span>
       </header>
 
       <div class="vision">
         <div class="vision__diagram">
           <svg viewBox="0 0 1424 312" id="visionSvg" role="img" aria-labelledby="visionTitle visionDesc">
             <title id="visionTitle">Schema van het toekomstbeeld</title>
-            <desc id="visionDesc">Alle data-aanvragen voor de vier domeinen komen binnen via één loket. Eén Etalage laat zien wat beschikbaar is. Daarachter loopt één uniform proces van intake tot evaluatie, binnen gezamenlijke kaders. Het resultaat wordt geleverd als dashboard, bestand of via een API, en indien nodig in een beveiligde omgeving.</desc>
+            <desc id="visionDesc">Elke wens voor data en/of informatie voor de vier domeinen komen binnen via één loket. Eén Etalage laat zien wat beschikbaar is. Daarachter loopt één uniform proces van intake tot evaluatie, binnen gezamenlijke kaders. Het resultaat wordt geleverd als dashboard, bestand of via een API, en indien nodig in een beveiligde omgeving.</desc>
             <defs>
               <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                 <path d="M0 0 L10 5 L0 10 z" fill="var(--warm-grey)"/>
@@ -125,8 +132,8 @@
               <g class="zone" data-zone="vragen">
                 <text x="0" y="40" font-size="18" font-weight="700" letter-spacing="2">VRAGEN</text>
                 <rect x="0" y="60" width="250" height="210" fill="var(--canvas)"/>
-                <text x="125" y="140" text-anchor="middle" font-size="26" font-weight="700">Alle data-</text>
-                <text x="125" y="172" text-anchor="middle" font-size="26" font-weight="700">aanvragen</text>
+                <text x="125" y="128" text-anchor="middle" font-size="24" font-weight="700">Wens voor data</text>
+                <text x="125" y="160" text-anchor="middle" font-size="24" font-weight="700">en/of informatie</text>
                 <text x="125" y="222" text-anchor="middle" font-size="21">NKR · KR · KvL · PZ</text>
                 <path d="M252 165 L314 165" stroke="var(--blue-75)" stroke-width="4" class="dash-flow" marker-end="url(#arrow)"/>
               </g>
@@ -238,7 +245,6 @@
               <li>De verbinding met de EHDS moet opnieuw worden gezocht</li>
             </ul>
           </div>
-          <p class="src">teamsamenstelling oktober 2026</p>
         </div>
       </div>
     </section>
@@ -286,7 +292,8 @@
             <ul class="milestones">
               <li class="ms"><span class="ms__when">Feb 2026</span><span>Start programma Datastrategie</span><span class="tag tag--vast">Vastgesteld</span></li>
               <li class="ms"><span class="ms__when">Sep 2026</span><span>Concept-opdracht Data-uitgifte</span><span class="tag tag--concept">Concept</span></li>
-              <li class="ms"><span class="ms__when">Volgende stap</span><span>Opdracht vaststellen en nulmeting</span><span class="tag tag--open">Te plannen</span></li>
+              <li class="ms"><span class="ms__when">Nov 2026</span><span>Opdracht definitief</span><span class="tag tag--richting">Gepland</span></li>
+              <li class="ms"><span class="ms__when">Dec 2026</span><span>Team compleet</span><span class="tag tag--richting">Gepland</span></li>
             </ul>
           </article>
 
@@ -295,7 +302,7 @@
             <ul class="milestones">
               <li class="ms"><span>Ontwerpen en besluiten: proces, portfolio, governance</span><span class="tag tag--richting">Richting</span></li>
               <li class="ms"><span>Eerste stappen beproeven</span><span class="tag tag--open">Timing open</span></li>
-              <li class="ms ms--key"><span class="ms__when">Eind 2027</span><span>Toekomstbeeld bestuurlijk vastgesteld</span><span class="tag tag--richting">Doel</span></li>
+              <li class="ms"><span class="ms__when">Eind 2027</span><span>Toekomstbeeld bestuurlijk vastgesteld</span><span class="tag tag--richting">Doel</span></li>
             </ul>
           </article>
 
@@ -334,18 +341,18 @@
           <details class="item"><summary>Programma loopt 2026–2031</summary>
             <div class="item__body"><p>Opdrachtgever is de RvB, gedelegeerd aan Martin van Mierloo en Robert de Bie. Programmamanager is Anne Steutel.</p></div></details>
           <details class="item"><summary>Data-uitgifte is een van vijf thema's</summary>
-            <div class="item__body"><p>Met Eén Etalage, Eén Loket en Koppelen als projecten.</p></div></details>
+            <div class="item__body"><p>Met in ieder geval Eén Etalage, Eén Loket en Koppelen als projecten. Daar komen er meer bij.</p></div></details>
         </section>
 
         <!-- Richting -->
         <section class="col col--richting" aria-labelledby="c-richting">
           <div class="col__head"><h3 id="c-richting">Richting</h3></div>
+          <details class="item"><summary>Huidige dienstverlening loopt door</summary>
+            <div class="item__body"><p>Aanpassen alleen na een besluit en met een overgangsplan.</p></div></details>
           <details class="item"><summary>Eén ingang voor vier domeinen</summary>
             <div class="item__body"><p>NKR, kwaliteitsregistraties, kwaliteit van leven en palliatieve zorg.</p></div></details>
           <details class="item"><summary>Eerst: wetenschappelijke aanvragen</summary>
-            <div class="item__body"><p><span class="tag tag--concept">Voorstel</span> Samen met het uniforme proces en het gezamenlijke portfolio.</p></div></details>
-          <details class="item"><summary>Huidige dienstverlening loopt door</summary>
-            <div class="item__body"><p><span class="tag tag--concept">Voorstel</span> Aanpassen alleen na een besluit en met een overgangsplan.</p></div></details>
+            <div class="item__body"><p>Samen met het uniforme proces en het gezamenlijke portfolio.</p></div></details>
         </section>
 
         <!-- Nog te besluiten -->
@@ -419,6 +426,15 @@
       <button class="ctrl" id="btnCloseOverview" type="button">Sluiten (Esc)</button>
     </div>
     <div class="overview__grid" id="overviewGrid"></div>
+    <div class="style-picker">
+      <p class="style-picker__label">Achtergrond van de lichte dia's</p>
+      <div class="style-picker__options" id="stylePicker" role="group" aria-label="Achtergrond kiezen">
+        <button class="ctrl" type="button" data-stijl="a" aria-pressed="false">A · Donkere rand</button>
+        <button class="ctrl" type="button" data-stijl="b" aria-pressed="false">B · Witte dia</button>
+        <button class="ctrl" type="button" data-stijl="c" aria-pressed="false">C · Blauwe kopbalk</button>
+        <button class="ctrl" type="button" data-stijl="d" aria-pressed="false">D · Lichtblauwe rand</button>
+      </div>
+    </div>
   </div>
 </div>
 

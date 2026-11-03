@@ -30,6 +30,10 @@
   };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
   var tag = function (status, label) { return '<span class="tag tag--' + status + '">' + esc(label || STATUS[status]) + "</span>"; };
+  /* Voert een onderdeel uit; bij een fout blijft de rest van de presentatie werken. */
+  var safe = function (naam, fn) {
+    try { fn(); } catch (e) { if (window.console) console.error("Onderdeel '" + naam + "' kon niet laden:", e); }
+  };
   var pressOnly = function (buttons, active) {
     buttons.forEach(function (b) { b.setAttribute("aria-pressed", b === active ? "true" : "false"); });
   };
@@ -121,6 +125,19 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   $("#btnOverview").addEventListener("click", openOverview);
+
+  /* ---------- Achtergrondstijl (keuze in het overzicht) ----------
+     Pas de standaard aan via data-stijl="a|b|c|d" op <body> in index.html. */
+  var styleBtns = $$("#stylePicker [data-stijl]");
+  function setStyle(v, remember) {
+    document.body.setAttribute("data-stijl", v);
+    styleBtns.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.stijl === v ? "true" : "false"); });
+    if (remember) { try { localStorage.setItem("dataUitgifteStijl", v); } catch (e) { /* geen opslag beschikbaar */ } }
+  }
+  styleBtns.forEach(function (b) { b.addEventListener("click", function () { setStyle(b.dataset.stijl, true); }); });
+  var savedStyle = null;
+  try { savedStyle = localStorage.getItem("dataUitgifteStijl"); } catch (e) { /* geen opslag beschikbaar */ }
+  setStyle(/^[abcd]$/.test(savedStyle || "") ? savedStyle : (document.body.getAttribute("data-stijl") || "d"), false);
   $("#btnCloseOverview").addEventListener("click", closeOverview);
 
   /* ---------- Toetsenbord ---------- */
@@ -163,27 +180,9 @@
   });
 
   /* ------------------------------------------------------------------
-     Dia 2 · Ontwikkelingen
-     ------------------------------------------------------------------ */
-  (function forces() {
-    var grid = $("#forceGrid"), detail = $("#forceDetail");
-    if (!grid || !C.forces) return;
-    var btns = [];
-    C.forces.forEach(function (f) {
-      var b = el("button", { "class": "force", type: "button", "aria-pressed": "false" }, esc(f.titel));
-      b.addEventListener("click", function () {
-        pressOnly(btns, b);
-        detail.innerHTML = "<p>" + esc(f.tekst) + "</p>";
-      });
-      btns.push(b);
-      grid.appendChild(b);
-    });
-  })();
-
-  /* ------------------------------------------------------------------
      Dia 3 · Toekomstbeeld
      ------------------------------------------------------------------ */
-  (function concepts() {
+  safe("concepts", function concepts() {
     var wrap = $("#conceptChips"), detail = $("#conceptDetail"), svg = $("#visionSvg");
     if (!wrap || !C.concepts) return;
     var zones = $$(".zone", svg);
@@ -202,17 +201,17 @@
         pressOnly(btns, b);
         svg.classList.add("is-focused");
         zones.forEach(function (z) { z.classList.toggle("is-lit", c.zones.indexOf(z.dataset.zone) > -1); });
-        detail.innerHTML = tag(c.status) + "<p>" + esc(c.tekst) + "</p>";
+        detail.innerHTML = "<p>" + esc(c.tekst) + "</p>";
       });
       btns.push(b);
       wrap.appendChild(b);
     });
-  })();
+  });
 
   /* ------------------------------------------------------------------
      Dia 4 · Lagen
      ------------------------------------------------------------------ */
-  (function layers() {
+  safe("layers", function layers() {
     var wrap = $("#layers"), detail = $("#layerDetail");
     if (!wrap || !C.layers) return;
     var btns = [];
@@ -238,12 +237,12 @@
         '<p class="layer-detail__rol"><strong>Wie</strong>' + esc(l.rol) + "</p>";
     }
     show(C.layers[0], btns[0]);
-  })();
+  });
 
   /* ------------------------------------------------------------------
      Dia 5 · Betrokkenen
      ------------------------------------------------------------------ */
-  (function team() {
+  safe("team", function team() {
     var svg = $("#teamSvg"), card = $("#personCard");
     if (!svg || !C.team) return;
     var cx = 450, cy = 400, R1 = 205, R2 = 345;
@@ -303,12 +302,12 @@
       card.innerHTML = '<div class="legend">' + status + "</div><h3>" + esc(p.naam) + '</h3><p class="role">' + esc(p.rol) + "</p><p>" + esc(p.brengt) + "</p>";
     }
     select(C.team.kern[0], nodes[0], "kern");
-  })();
+  });
 
   /* ------------------------------------------------------------------
      Dia 6 · Projecten
      ------------------------------------------------------------------ */
-  (function projects() {
+  safe("projects", function projects() {
     var wrap = $("#projectGroups"), detail = $("#projectDetail");
     if (!wrap || !C.projects) return;
     var groups = [
@@ -345,7 +344,7 @@
         "</dl>";
     }
     show(C.projects[0], btns[0]);
-  })();
+  });
 
   /* ------------------------------------------------------------------
      Start

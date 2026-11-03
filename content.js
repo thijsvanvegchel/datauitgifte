@@ -1,8 +1,8 @@
 /* ==========================================================================
    INHOUD VAN DE INTERACTIEVE ONDERDELEN
    --------------------------------------------------------------------------
-   Hier pas je de teksten aan die verschijnen als je op iets klikt.
-   Vaste teksten (titels, kernzinnen) staan direct in index.html.
+   Hier pas je de teksten aan van de onderdelen waar je op kunt klikken
+   (dia 3, 4, 5 en 6). Alle andere teksten staan direct in index.html.
 
    Houd teksten kort: de presentatie is ingericht op kleine schermen.
    Richtlijn: titels max. ~25 tekens, toelichting max. 2 korte zinnen.
@@ -14,6 +14,7 @@
      "open"     -> Nog te besluiten / uit te werken
      "hold"     -> On hold
 
+   Het veld "bron" wordt niet getoond; het is alleen ter controle.
    Broncodes (zie docs/contentmodel.md):
      OO = concept-opdrachtomschrijving Data-uitgifte (10 sep 2026)
      PP = Programmaplan Datastrategie v0.1 (27 mei 2026)
@@ -23,40 +24,6 @@
    ========================================================================== */
 
 window.CONTENT = {
-
-  /* ---------- Dia 2: ontwikkelingen die samenkomen ---------- */
-  forces: [
-    {
-      id: "fusie",
-      titel: "Fusie DICA-IKNL",
-      tekst: "Twee verschillend ingerichte dataketens worden één organisatie. Dat vraagt om één herkenbare dienstverlening.",
-      bron: "PP 1.2"
-    },
-    {
-      id: "veld",
-      titel: "Verwachtingen van het veld",
-      tekst: "Meer vraag naar actuele, betrouwbare data en meer complexe verzoeken. Gebruikers willen sneller inzicht.",
-      bron: "PD thema-dia; PP 1.2"
-    },
-    {
-      id: "beschikbaar",
-      titel: "Databeschikbaarheid",
-      tekst: "We willen onze sterke positie behouden. Data krijgt pas waarde als gebruikers die kunnen vinden en gebruiken.",
-      bron: "OO; BR"
-    },
-    {
-      id: "ehds",
-      titel: "EHDS en HDAB-NL",
-      tekst: "Data moet vindbaar, toegankelijk en herbruikbaar zijn. Onze rol in de EHDS wordt nog verkend.",
-      bron: "PD thema-dia; PP 1.2"
-    },
-    {
-      id: "schaal",
-      titel: "Schaalbaarheid",
-      tekst: "De vraag groeit, de middelen niet. Dat vraagt standaardisatie, hergebruik en automatisering.",
-      bron: "OO"
-    }
-  ],
 
   /* ---------- Dia 3: kernbegrippen toekomstbeeld ----------
      'zones' bepaalt welk deel van het schema oplicht:
@@ -82,7 +49,7 @@ window.CONTENT = {
       id: "voorspelbaar",
       titel: "Voorspelbaar",
       zones: ["ingang", "proces", "levering"],
-      tekst: "Aanvragers weten vooraf wat kan en hoe lang het duurt. KPI-voorstel: gemiddeld een 8,0 en 75% binnen 100 dagen.",
+      tekst: "Aanvragers weten vooraf wat kan en hoe lang het duurt.",
       status: "concept",
       bron: "PD 1-dataloket; OO"
     },
