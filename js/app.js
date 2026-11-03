@@ -347,6 +347,22 @@
   });
 
   /* ------------------------------------------------------------------
+     Dia 8 · Aandachtspunten
+     Per kolom staat maximaal één blokje open: openklikken sluit de andere.
+     ------------------------------------------------------------------ */
+  safe("aandachtspunten", function aandachtspunten() {
+    $$("#dia-8 .col").forEach(function (col) {
+      var items = $$("details.item", col);
+      items.forEach(function (d) {
+        d.addEventListener("toggle", function () {
+          if (!d.open) return;
+          items.forEach(function (other) { if (other !== d && other.open) other.open = false; });
+        });
+      });
+    });
+  });
+
+  /* ------------------------------------------------------------------
      Start
      ------------------------------------------------------------------ */
   var m = /^#dia-(\d+)$/.exec(location.hash);
