@@ -1,8 +1,7 @@
-# Contentmodel – presentatie Data-uitgifte
+# Contentmodel – presentatie Uitgifte
 
-> Titeldia: "Uitgifte" (november 2026, op verzoek van de opsteller). De officiële naam van het werkpakket blijft Data-uitgifte; die staat erboven.
+> Naam werkpakket (november 2026): **Uitgifte**, ook voor het programmathema. Alleen de regel boven de titel op de titeldia luidt "Werkpakket Uitgifte van data en informatie". Bronverwijzingen naar documenten (zoals de concept-opdrachtomschrijving Data-uitgifte) houden hun oorspronkelijke titel.
 
-> De officiële naam van het werkpakket is **Data-uitgifte**. DICA maakt wel onderscheid tussen data en informatie en levert bij voorkeur informatie en inzichten; dat is verwerkt in het toekomstbeeld (dia 3).
 
 Dit document legt vast welke inhoud in de presentatie staat, uit welke bron die komt en welke status die heeft.
 Hiermee kun je controleren dat er niets is verzonnen.
@@ -75,11 +74,11 @@ Hiermee kun je controleren dat er niets is verzonnen.
 ### 6. Projecten en activiteiten
 | Project | Bronnaam | Status in presentatie | Bron |
 |---|---|---|---|
-| Visie en strategie | "Visie en strategie voor data-uitgifte" / "Strategie vorming" | In concept | PP 2.2.2, PD dia 18, OO |
+| Visie en strategie | "Visie en strategie voor data-uitgifte" / "Strategie vorming" | Vastgesteld (oktober 2026) | PP 2.2.2, PD dia 18, OO, TS |
 | Eén Etalage | WP1 1-etalage | Afrondend (stand PD) | PD |
 | Eén (data)loket | WP6 1-loket / 1-dataloket | Start later | PD |
 | Koppelen DICA-IKNL | WP7 Koppeling DUCA<>NKR / Koppelen DICA-IKNL | On hold (grondslagen) | PD, PP |
-| Niet-NKR-data | Spoor 4 (Thema 1) | Status onbekend | PD dia 13, PP 2.2.1 |
+| Niet-NKR-data | Spoor 4 (Thema 1) | Overgedragen aan NKR-analyse; afhankelijk van harmonisatie en juridische zaken | PD dia 13, PP 2.2.1, TS |
 | Harmonisatie, Architectuur, Datakwaliteit | Naastliggende thema's | Lopend | PP |
 | EHDS en CancerLink | Bestaande initiatieven | Opnieuw verbinden | OO, TS |
 | Projecten 2027 | – | Nog te benoemen | OO (roadmap) |
@@ -89,7 +88,7 @@ Statussen komen uit programmadocumenten van januari–mei 2026 en kunnen inmidde
 ### 7. Roadmap 2026–2028
 - Programma gestart 1 feb 2026, loopt tot 1 feb 2031 – **PD**, **PP** → *Vastgesteld*.
 - Concept-opdrachtomschrijving 10 sep 2026 – **OO**.
-- Opdracht definitief november 2026; team compleet december 2026 – **TS** (planning van de opsteller).
+- Opdracht vastgesteld door programmaleiding in oktober 2026; team compleet december 2026 – **TS**.
 - Fasen 1–4 – **OO** (zonder jaartallen).
 - "Eind 2027 gedragen en bestuurlijk vastgesteld toekomstbeeld" en "voor 2027 minimaal de projecten benoemd" – **OO**.
 - 2028: geen inhoud in de bronnen → *Nog uit te werken*.
@@ -118,3 +117,11 @@ Weggelaten op de dia: functionele eisen vs. techniek (staat op dia 4), wat stand
 
 ### 9. Slot
 - Boodschap en drie begrippen – **BR**.
+
+### Afgestemd op 6 november 2026
+- Opdracht vastgesteld door programmaleiding in oktober 2026 (dia 6, 7 en 8 *Reeds bepaald*).
+- December 2026 "Team compleet" blijft gepland; een deel van de genoemde mensen weet het zelf nog niet.
+- Statussen Etalage (afrondend), Loket (start later) en Koppelen (on hold) bevestigd.
+- "Alle domeinen" op dia 4 (Loket, Proces) en dia 6 (Eén (data)loket); op dia 3 en 8 blijven de vier domeinen genoemd.
+- Beveiligde omgeving overal: "indien nodig gescheiden en in een beveiligde omgeving".
+- Dia 3: kanalen bij Wensen en signalen blijven volledig; geen extra lijnen.
