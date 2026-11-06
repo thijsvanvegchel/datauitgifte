@@ -26,6 +26,8 @@ h1, h2, h3, p, ul, ol { margin: 0; }
 ul { padding: 0; list-style: none; }
 button { font: inherit; color: inherit; }
 
+.nowrap { white-space: nowrap; }
+
 .sr-only {
   position: absolute; width: 1px; height: 1px; overflow: hidden;
   clip: rect(0 0 0 0); white-space: nowrap;
