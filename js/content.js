@@ -21,6 +21,8 @@
      PD = Programmadeck Datastrategie (jan 2026 e.v.)
      BR = briefing van de opsteller
      TS = teamsamenstelling (oktober 2026)
+   Laat "afh" leeg ([]) als er geen afhankelijkheden zijn; het kopje
+   verdwijnt dan vanzelf.
    ========================================================================== */
 
 window.CONTENT = {
@@ -40,7 +42,7 @@ window.CONTENT = {
       id: "uniform",
       titel: "Uniform",
       zones: ["ingang", "wensen", "proces"],
-      tekst: "Data-aanvragen en wensen voor informatieproducten doorlopen dezelfde stappen, ongeacht team of medewerker. Eén proces waar het kan, variatie waar het moet.",
+      tekst: "Data-aanvragen en wensen voor data- en informatieproducten doorlopen dezelfde stappen, ongeacht team of medewerker. Eén proces waar het kan, variatie waar het moet.",
       bron: "OO; PD thema-dia"
     },
     {
@@ -54,14 +56,14 @@ window.CONTENT = {
       id: "schaalbaar",
       titel: "Schaalbaar",
       zones: ["wensen", "proces", "levering"],
-      tekst: "Wat vaak gevraagd wordt, bieden we standaard aan, bij voorkeur als informatieproduct. Maatwerk blijft mogelijk waar het nodig is.",
+      tekst: "Wat vaak gevraagd wordt, bieden we standaard aan. Maatwerk blijft mogelijk waar het nodig is.",
       bron: "OO; TS"
     },
     {
       id: "veilig",
       titel: "Veilig & betrouwbaar",
       zones: ["kaders", "levering"],
-      tekst: "Eén toetsingskader en één centrale privacycommissie. Indien nodig leveren we in een beveiligde omgeving.",
+      tekst: "Eén toetsingskader en één centrale privacycommissie. Indien nodig leveren we gescheiden en in een beveiligde omgeving.",
       bron: "OO; PD 1-dataloket"
     }
   ],
@@ -87,7 +89,7 @@ window.CONTENT = {
       vraag: "Hoe vraag je data aan?",
       zichtbaar: true,
       punten: [
-        "Eén plek om data aan te vragen, voor vier domeinen",
+        "Eén plek om data aan te vragen, voor alle domeinen",
         "Eén aanvraagformulier",
         "Vooraf duidelijk: selfservice, standaard of maatwerk"
       ],
@@ -101,7 +103,7 @@ window.CONTENT = {
       zichtbaar: false,
       punten: [
         "Vaste stappen van intake tot evaluatie",
-        "Eén toetsingskader voor de vier domeinen",
+        "Eén toetsingskader voor alle domeinen",
         "Eén gezamenlijke backoffice"
       ],
       rol: "Binnen dit werkpakket",
@@ -113,11 +115,11 @@ window.CONTENT = {
       vraag: "Waarmee leveren we?",
       zichtbaar: false,
       punten: [
-        "Dashboards, bestanden en API's; indien nodig in een beveiligde omgeving",
+        "Dashboards, bestanden en API's; indien nodig gescheiden en in een beveiligde omgeving",
         "Herbruikbare datasets en minder handwerk",
         "Goede datakwaliteit als fundament"
       ],
-      rol: "Wij stellen de eisen, Architectuur en dataplatform bouwen (voorstel)",
+      rol: "Wij stellen de eisen, Architectuur en Dataplatform bouwen (voorstel)",
       bron: "OO (besluitpunten, scope)"
     },
     {
@@ -148,7 +150,7 @@ window.CONTENT = {
       { naam: "Alexander Dank", rol: "Data engineer", brengt: "Vanuit DICA." }
     ],
     schil: [
-      { naam: "Willem Schilte", rol: "Hoofd Software Development", brengt: "Architectuur, technische koers en aansluiting op het dataplatform." },
+      { naam: "Willem Schilte", rol: "Hoofd Software Development", brengt: "Architectuur, technische koers en aansluiting op het Dataplatform." },
       { naam: "Remy Broos", rol: "Privacy officer", brengt: "Vertaalt privacyregels praktisch naar processen en projecten." },
       { naam: "Eva Mezei", rol: "Senior clinical data scientist", brengt: "Onderzoek, data science en het perspectief van de gebruiker." },
       { naam: "Annemarie Eeltink", rol: "Analist", brengt: "Verbindende schakel met het project Uitgeven niet-NKR-data." },
@@ -162,17 +164,17 @@ window.CONTENT = {
   },
 
   /* ---------- Dia 6: projecten en activiteiten ----------
-     groep: "binnen" (thema Data-uitgifte) | "naast" (raakvlak) | "volgt"  */
+     groep: "binnen" (thema Uitgifte) | "naast" (raakvlak) | "volgt"  */
   projects: [
     {
       id: "strategie",
       groep: "binnen",
       titel: "Visie en strategie",
-      status: "concept",
-      label: "In concept",
-      doel: "Toekomstbeeld, portfolio, governance, KPI's en plan van aanpak voor data-uitgifte.",
-      statusTekst: "Opdrachtomschrijving in concept (10 sep 2026)",
-      afh: ["Vaststelling door programmaleiding"],
+      status: "vast",
+      label: "Vastgesteld",
+      doel: "Toekomstbeeld, portfolio, governance, KPI's en plan van aanpak voor uitgifte.",
+      statusTekst: "Opdrachtomschrijving vastgesteld door programmaleiding (oktober 2026)",
+      afh: ["Laatste afstemming Mirthe en Thijs"],
       bron: "OO; PP 2.2.2"
     },
     {
@@ -192,7 +194,7 @@ window.CONTENT = {
       titel: "Eén (data)loket",
       status: "open",
       label: "Start later",
-      doel: "Eén plek op de website om data aan te vragen voor de vier domeinen.",
+      doel: "Eén plek op de website om data aan te vragen voor alle domeinen.",
       statusTekst: "Opdrachtomschrijving in concept; start later",
       afh: ["Werkgroep grondslagen", "Fusie-/integratieteam"],
       bron: "PD WP6 en opdrachtomschrijving 1-dataloket"
@@ -212,12 +214,12 @@ window.CONTENT = {
       id: "nietnkr",
       groep: "naast",
       titel: "Niet-NKR-data",
-      status: "open",
-      label: "Status onbekend",
+      status: "richting",
+      label: "Overgedragen",
       doel: "Niet-NKR-data (zoals KvL en PZ) inlezen en gekoppeld aan NKR-data uitleveren.",
-      statusTekst: "Actuele status niet in de bronnen",
-      afh: ["Harmonisatie"],
-      bron: "PP 2.2.1; PD Spoor 4"
+      statusTekst: "Overgedragen aan NKR-analyse, die het gaat oppakken",
+      afh: ["Harmonisatie", "Juridische zaken"],
+      bron: "PP 2.2.1; PD Spoor 4; TS (status november 2026)"
     },
     {
       id: "harmonisatie",
@@ -227,7 +229,7 @@ window.CONTENT = {
       label: "Lopend",
       doel: "Minder verschillen in definities en coderingen, zodat data herbruikbaar wordt.",
       statusTekst: "Lopend thema in het programma",
-      afh: ["EHDS"],
+      afh: [],
       bron: "PP 2.1"
     },
     {
@@ -249,7 +251,7 @@ window.CONTENT = {
       label: "Lopend",
       doel: "Datakwaliteit expliciet maken en borgen als basis voor betrouwbare producten.",
       statusTekst: "Lopend thema in het programma",
-      afh: ["EHDS-kwaliteitskaders"],
+      afh: ["EHDS-kwaliteitskaders", "Werkpakket Kwaliteit van data"],
       bron: "PP 2.1; PD"
     },
     {
