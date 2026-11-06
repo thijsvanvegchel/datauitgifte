@@ -1,5 +1,9 @@
 # Contentmodel – presentatie Data-uitgifte
 
+> Titeldia: "Uitgifte" (november 2026, op verzoek van de opsteller). De officiële naam van het werkpakket blijft Data-uitgifte; die staat erboven.
+
+> De officiële naam van het werkpakket is **Data-uitgifte**. DICA maakt wel onderscheid tussen data en informatie en levert bij voorkeur informatie en inzichten; dat is verwerkt in het toekomstbeeld (dia 3).
+
 Dit document legt vast welke inhoud in de presentatie staat, uit welke bron die komt en welke status die heeft.
 Hiermee kun je controleren dat er niets is verzonnen.
 
@@ -35,12 +39,17 @@ Hiermee kun je controleren dat er niets is verzonnen.
 - Kernzin: "waarde ontstaat pas wanneer gebruikers ze kunnen vinden, begrijpen en toepassen" – **OO**, Aanleiding.
 
 ### 2. Waarom dit werkpakket?
-- Opbouw: Vandaag → Tegelijk → Daarom (de opgave).
-- Vandaag: veel routes (mailboxen, formulieren, losse medewerkers), elk team eigen definities, tools en oplevering, met als gevolg veel maatwerk en lange doorlooptijden – **PD**, dia "Thema – Optimalisatie van data-uitgifte". "Tools" is een aanpassing van de opsteller; de bron noemt "templates".
+- Opbouw: Vandaag → Tegelijk → Daarom.
+- Vandaag, twee vertrekpunten (aangeleverd door DICA, november 2026, op basis van de bevindingen van Eén Etalage):
+  - IKNL: veel losse routes, eigen definities en werkwijzen per team – ook **PD**, dia "Thema – Optimalisatie van data-uitgifte".
+  - DICA: werkt vanuit een platformgedachte, met één centrale afdeling voor data- en informatieproducten en gestandaardiseerde definities en visualisaties.
+  - Samen: nog geen gezamenlijke ingang en werkwijze – **PD** opdrachtomschrijving 1-dataloket.
 - Tegelijk: fusie (**PP** 1.2), verwachtingen veld (**PD** thema-dia, **PP** 1.2), databeschikbaarheid (**OO**, **BR**), EHDS/HDAB-NL (**PD**, **PP**), schaalbaarheid (**OO**).
 - EHDS-rol (Trusted Health Data Holder of Health Data Intermediation Entity) wordt verkend – **PP** 1.2 (opmerking) → *Nog te besluiten*.
 
 ### 3. Toekomstbeeld
+> Afgestemd in november 2026 (aangevuld door DICA): elke vraag komt binnen bij de Etalage. Bestaande informatieproducten gebruik je direct. Voor data ga je naar het Loket. Wensen voor nieuwe of betere producten komen binnen via gebruikersgroepen, servicedesk, enquêtes, marktonderzoek, CAB's en bestuur/management, niet via het loket. Data-aanvragen en wensen doorlopen samen één uniform proces, dat binnen dit werkpakket wordt opgezet. Dit traject levert; het maakt geen producten. Levering: informatieproducten en data (bestand, API, indien nodig beveiligde omgeving) – **TS**.
+
 - Eindbeeld "Eén centrale ingang …" – **BR**; vergelijkbaar in **PP** 2.1 en **OO**.
 - Vier domeinen NKR, KR, KvL, PZ – **PP**, **PD**.
 - Processtappen intake, toetsing, prioritering, levering, evaluatie – **OO**.
@@ -50,16 +59,18 @@ Hiermee kun je controleren dat er niets is verzonnen.
 - Weggelaten op de dia: de zes soorten vragen (wetenschappelijk, maatwerk, standaard, dashboards, spiegelinformatie, (inter)nationaal) en de doelgroepen (ziekenhuizen, onderzoekers, beleidsmakers, netwerken).
 
 ### 4. Wat moeten we organiseren?
+- Titel: "Eén samenhangende dienstverlening" (november 2026). Ontleend aan **OO**: Data-uitgifte richt zich op *hoe*, Eén Etalage op *wat*; samen vormen zij de basis voor één samenhangende dienstverlening. Eerdere titel "Eén loket is alleen de voorkant" vervangen, omdat de laag Aanbod de scope van Eén Etalage is.
 - Lagen en inhoud – **OO** (resultaten, scope), **PD** (1-loket, 1-etalage).
 - "Technische koppelingen vallen onder architectuur en dataplatform" – **OO**, besluitpunt bij vaststelling → *Voorstel*.
 - Weggelaten op de dia: de ontwerpprincipes (**OO**, *Voorstel*): klantwaarde vóór productwaarde; hergebruik vóór maatwerk; standaardisatie vóór uitzonderingen; één proces waar het kan, variatie waar het moet; producten versterken elkaar; besluiten op basis van gebruik, impact en klantwaarde.
 
 ### 5. Wie zijn betrokken?
-- Kernteam en schil met namen en rollen – **TS** (teamsamenstelling oktober 2026, aangeleverd door de opsteller).
-- Kernteam: Thijs van Vegchel (werkpakketleider), Mirthe Groothuis (mede-werkpakketleider), Gemma Timmermans (analist, product owner DataLOKET), Marjolein Verhoeven (informatieanalist), Marc Klaassen (BI-specialist), Sandra van der Kooij (informatieanalist).
-- Schil: Willem Schilte, Remy Broos, Eva Mezei, Annemarie Eeltink, Rian Schobers, Baukje Dijkstra, en nog in te vullen collega's vanuit DICA.
-- Aandachtspunten: meer collega's vanuit DICA gezocht; de verbinding met de EHDS moet opnieuw worden gezocht – **TS**.
-- Let op: het programmadeck schrijft "Sandra van de Kooij"; de presentatie volgt de spelling van de opsteller, "Sandra van der Kooij".
+- Kernteam en schil met namen en rollen – **TS** (teamsamenstelling november 2026, intern afgestemd met DICA).
+- Kernteam: Thijs van Vegchel (werkpakketleider), Mirthe Groothuis (mede-werkpakketleider), Gemma Timmermans (analist, product owner DataLOKET), Marjolein Verhoeven (informatieanalist), Marc Klaassen (BI-specialist), Alexander Dank (data engineer, vanuit DICA).
+- Schil: Willem Schilte, Remy Broos, Eva Mezei, Annemarie Eeltink, Rian Schobers, Baukje Dijkstra, en vanuit DICA Lennard van Wanrooij (product owner), Berend de Jong (informatieanalist), Varisha Makhanlal (informatieanalist) en Marcel van Willigen (data engineer).
+- DICA-vertegenwoordiging is compleet (november 2026).
+- Aandachtspunt: de verbinding met de EHDS moet opnieuw worden gezocht – **TS**.
+- Spelling volgens opgave DICA: "Varisha Makhanlal" (programmadeck: "Makhanal") en "Marcel van Willigen" (programmadeck: "van Willegen").
 
 ### 6. Projecten en activiteiten
 | Project | Bronnaam | Status in presentatie | Bron |

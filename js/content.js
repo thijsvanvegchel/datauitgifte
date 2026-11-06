@@ -27,20 +27,20 @@ window.CONTENT = {
 
   /* ---------- Dia 3: kernbegrippen toekomstbeeld ----------
      'zones' bepaalt welk deel van het schema oplicht:
-     vragen | etalage | informatie | ingang | proces | kaders | levering            */
+     etalage | informatie | ingang | wensen | proces | kaders | levering            */
   concepts: [
     {
       id: "ingang",
       titel: "Eén ingang",
-      zones: ["vragen", "etalage", "informatie", "ingang"],
-      tekst: "Je begint altijd bij de Etalage. Informatie gebruik je daar direct; data vraag je aan via het Loket, voor NKR, KR, KvL en PZ.",
+      zones: ["etalage", "informatie", "ingang"],
+      tekst: "Elke vraag komt binnen bij de Etalage. Voor informatie word je rechtstreeks doorverwezen; voor data ga je naar het Loket, voor NKR, KR, KvL en PZ.",
       bron: "OO; PD 1-dataloket; TS"
     },
     {
       id: "uniform",
       titel: "Uniform",
-      zones: ["proces"],
-      tekst: "Elke data-aanvraag doorloopt dezelfde stappen, ongeacht team of medewerker. Eén proces waar het kan, variatie waar het moet.",
+      zones: ["ingang", "wensen", "proces"],
+      tekst: "Data-aanvragen en wensen voor informatieproducten doorlopen dezelfde stappen, ongeacht team of medewerker. Eén proces waar het kan, variatie waar het moet.",
       bron: "OO; PD thema-dia"
     },
     {
@@ -53,7 +53,7 @@ window.CONTENT = {
     {
       id: "schaalbaar",
       titel: "Schaalbaar",
-      zones: ["etalage", "informatie"],
+      zones: ["wensen", "proces", "levering"],
       tekst: "Wat vaak gevraagd wordt, bieden we standaard aan, bij voorkeur als informatieproduct. Maatwerk blijft mogelijk waar het nodig is.",
       bron: "OO; TS"
     },

@@ -245,12 +245,12 @@
   safe("team", function team() {
     var svg = $("#teamSvg"), card = $("#personCard");
     if (!svg || !C.team) return;
-    var cx = 450, cy = 400, R1 = 205, R2 = 345;
+    var cx = 450, cy = 420, R1 = 205, R2 = 345;
     svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R2 + 52, fill: "var(--green-25)" }));
     svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R1 + 62, fill: "var(--blue-25)" }));
-    svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 96, fill: "var(--warm-grey)" }));
-    [["Werkpakket", 390, 19, 500], ["Data-uitgifte", 420, 26, 700]].forEach(function (t) {
-      var tx = svgEl("text", { x: cx, y: t[1], "text-anchor": "middle", "font-size": t[2], "font-weight": t[3], fill: "var(--white)" });
+    svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 100, fill: "var(--warm-grey)" }));
+    [["Werkpakket", -10, 19, 500], ["Data-uitgifte", 22, 26, 700]].forEach(function (t) {
+      var tx = svgEl("text", { x: cx, y: cy + t[1], "text-anchor": "middle", "font-size": t[2], "font-weight": t[3], fill: "var(--white)" });
       tx.textContent = t[0];
       svg.appendChild(tx);
     });
