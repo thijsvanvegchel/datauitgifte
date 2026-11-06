@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Presentatie Data-uitgifte – bediening en interactieve onderdelen
+   Presentatie Uitgifte – bediening en interactieve onderdelen
    Inhoud staat in js/content.js en index.html; hier zit alleen gedrag.
    ========================================================================== */
 (function () {
@@ -249,7 +249,7 @@
     svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R2 + 52, fill: "var(--green-25)" }));
     svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: R1 + 62, fill: "var(--blue-25)" }));
     svg.appendChild(svgEl("circle", { cx: cx, cy: cy, r: 100, fill: "var(--warm-grey)" }));
-    [["Werkpakket", -10, 19, 500], ["Data-uitgifte", 22, 26, 700]].forEach(function (t) {
+    [["Werkpakket", -10, 19, 500], ["Uitgifte", 22, 26, 700]].forEach(function (t) {
       var tx = svgEl("text", { x: cx, y: cy + t[1], "text-anchor": "middle", "font-size": t[2], "font-weight": t[3], fill: "var(--white)" });
       tx.textContent = t[0];
       svg.appendChild(tx);
@@ -311,7 +311,7 @@
     var wrap = $("#projectGroups"), detail = $("#projectDetail");
     if (!wrap || !C.projects) return;
     var groups = [
-      { label: "Binnen het thema Data-uitgifte", ids: ["binnen"], small: false },
+      { label: "Binnen het thema Uitgifte", ids: ["binnen"], small: false },
       { label: "Ernaast en daarna", ids: ["naast", "volgt"], small: true }
     ];
     var btns = [];
@@ -340,7 +340,7 @@
         "<dl>" +
         "<div><dt>Doel</dt><dd>" + esc(p.doel) + "</dd></div>" +
         "<div><dt>Status</dt><dd>" + esc(p.statusTekst) + "</dd></div>" +
-        "<div><dt>Afhankelijk van</dt><dd>" + p.afh.map(esc).join(", ") + "</dd></div>" +
+        (p.afh && p.afh.length ? "<div><dt>Afhankelijk van</dt><dd>" + p.afh.map(esc).join(", ") + "</dd></div>" : "") +
         "</dl>";
     }
     show(C.projects[0], btns[0]);
