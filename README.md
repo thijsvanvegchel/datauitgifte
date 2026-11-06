@@ -1,6 +1,6 @@
-# Presentatie Data-uitgifte
+# Presentatie Uitgifte
 
-Interactieve bestuurlijke briefing (9 schermen, ongeveer 10 minuten) over het werkpakket Data-uitgifte binnen het programma Datastrategie van DICA-IKNL.
+Interactieve bestuurlijke briefing (9 schermen, ongeveer 10 minuten) over het werkpakket Uitgifte binnen het programma Datastrategie van DICA-IKNL.
 
 ## Openen
 
